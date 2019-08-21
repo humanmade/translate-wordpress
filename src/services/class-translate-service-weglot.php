@@ -98,7 +98,7 @@ class Translate_Service_Weglot {
                     $translated_content    = apply_filters( 'weglot_json_treat_page', $translated_content );
                     return $translated_content;
 				case 'html':
-					$translated_content = $parser->translate( $content, $this->original_language, $this->current_language ); // phpcs:ignore
+				    $translated_content = $parser->translate( $content, $this->original_language, $this->current_language ); // phpcs:ignore
 					$translated_content = apply_filters( 'weglot_html_treat_page', $translated_content );
 					return $this->weglot_render_dom( $translated_content );
 				default:
