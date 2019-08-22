@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "weglot/weglot-php": "dev-feature/translate-json",
+    "weglot/weglot-php": "^0.5",
     "galbar/jsonpath": "dev-master",
     "gmulti/morphism-php": "^0.3.0"
   },
