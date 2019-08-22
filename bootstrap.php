@@ -61,7 +61,7 @@ abstract class Context_Weglot {
 
             '\WeglotWP\Third\Amp\Amp_Service_Weglot',
             '\WeglotWP\Third\Calderaforms\Caldera_Active',
-            '\WeglotWP\Third\EDD\EDD_Active',
+            '\WeglotWP\Third\Edd\Edd_Active',
             '\WeglotWP\Third\Gravityforms\Gf_Active',
             '\WeglotWP\Third\NinjaForms\Ninja_Active',
             '\WeglotWP\Third\Woocommerce\Wc_Active',
@@ -94,7 +94,7 @@ abstract class Context_Weglot {
 
             '\WeglotWP\Third\Amp\Amp_Enqueue_Weglot',
             '\WeglotWP\Third\Calderaforms\Caldera_I18n_Inline',
-            '\WeglotWP\Third\EDD\EDD_Filter_Urls',
+            '\WeglotWP\Third\Edd\Edd_Filter_Urls',
             '\WeglotWP\Third\Gravityforms\GF_Filter_Urls',
             '\WeglotWP\Third\Woocommerce\WC_Filter_Urls_Weglot',
             '\WeglotWP\Third\Woocommerce\WC_Cart_Reload_Weglot',

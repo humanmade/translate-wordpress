@@ -1,6 +1,6 @@
 <?php
 
-namespace WeglotWP\Third\EDD;
+namespace WeglotWP\Third\Edd;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -11,7 +11,7 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 
 
 
-class EDD_Active implements Third_Active_Interface_Weglot {
+class Edd_Active implements Third_Active_Interface_Weglot {
 
 	/**
 	 * WooCommerce is active ?

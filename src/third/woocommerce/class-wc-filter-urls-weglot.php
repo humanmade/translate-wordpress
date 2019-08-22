@@ -115,7 +115,7 @@ class WC_Filter_Urls_Weglot implements Hooks_Interface_Weglot {
 	 *
 	 * @since 2.0
 	 * @param array $result
-	 * @return string
+	 * @return array
 	 */
 	public function woocommerce_filter_url_array( $result ) {
 		$current_and_original_language = weglot_get_current_and_original_language();
@@ -131,7 +131,9 @@ class WC_Filter_Urls_Weglot implements Hooks_Interface_Weglot {
 			}
 		}
 		if ( $this->replace_url_services->check_link( $result['redirect'] ) ) { // We must not add language code if external link
-			$result['redirect'] = $url->getForLanguage( $choose_current_language );
+            if(isset($url) && $url) {
+                $result['redirect'] = $url->getForLanguage( $choose_current_language );
+            }
 		}
 		return $result;
 	}
@@ -142,6 +144,7 @@ class WC_Filter_Urls_Weglot implements Hooks_Interface_Weglot {
 	 * @since 2.0
 	 * @version 2.0.4
 	 * @param mixed $url
+     * @return void
 	 */
 	public function woocommerce_filter_reset_password( $url ) {
 		$current_and_original_language = weglot_get_current_and_original_language();
