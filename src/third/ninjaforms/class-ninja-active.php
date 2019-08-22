@@ -1,6 +1,6 @@
 <?php
 
-namespace WeglotWP\Third\NinjaForms;
+namespace WeglotWP\Third\Ninjaforms;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -16,7 +16,7 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
  *
  * @since 2.5.0
  */
-class Ninja_Active_Weglot implements Third_Active_Interface_Weglot {
+class Ninja_Active implements Third_Active_Interface_Weglot {
 
 	/**
 	 * Ninja forms is active ?

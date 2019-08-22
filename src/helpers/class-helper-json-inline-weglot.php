@@ -55,21 +55,4 @@ abstract class Helper_Json_Inline_Weglot {
 	public static function is_json( $string ) {
 		return is_string( $string ) && is_array( \json_decode( $string, true ) ) && ( JSON_ERROR_NONE === \json_last_error() ) ? true : false;
 	}
-
-	/**
-	 * @since 2.3.0
-	 *
-	 * @param string $string
-	 * @return boolean
-	 */
-	public static function is_ajax_html( $string ) {
-		$preg_match_ajax_html = apply_filters( 'weglot_is_ajax_html_regex',  '/<(a|div|span|p|i|aside|input|textarea|select|h1|h2|h3|h4|meta|button|form|li|strong|ul|option)/' );
-		$result               = preg_match_all( $preg_match_ajax_html, $string, $m, PREG_PATTERN_ORDER );
-
-		if ( isset( $string[0] ) && '{' !== $string[0] && $result && $result >= 1 ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 }

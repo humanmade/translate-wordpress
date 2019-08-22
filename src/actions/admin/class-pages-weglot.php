@@ -27,7 +27,7 @@ class Pages_Weglot implements Hooks_Interface_Weglot {
 		$this->language_services   = weglot_get_service( 'Language_Service_Weglot' );
 		$this->button_services     = weglot_get_service( 'Button_Service_Weglot' );
 		$this->user_api_services   = weglot_get_service( 'User_Api_Service_Weglot' );
-		$this->wc_active_services  = weglot_get_service( 'WC_Active_Weglot' );
+		$this->wc_active_services  = weglot_get_service( 'Wc_Active' );
 		return $this;
 	}
 

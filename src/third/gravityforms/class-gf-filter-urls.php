@@ -19,7 +19,7 @@ class GF_Filter_Urls implements Hooks_Interface_Weglot {
 	 * @return void
 	 */
 	public function __construct() {
-		$this->gf_active_services        = weglot_get_service( 'GF_Active' );
+		$this->gf_active_services        = weglot_get_service( 'Gf_Active' );
 	}
 
 	/**

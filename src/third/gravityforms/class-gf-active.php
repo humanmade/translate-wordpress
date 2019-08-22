@@ -14,7 +14,7 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 /**
  * @since 3.0
  */
-class GF_Active implements Third_Active_Interface_Weglot {
+class Gf_Active implements Third_Active_Interface_Weglot {
 
 	/**
 	 * @since 3.0.0

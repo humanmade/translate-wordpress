@@ -1,6 +1,6 @@
 <?php
 
-namespace WeglotWP\Third\CalderaForms;
+namespace WeglotWP\Third\Calderaforms;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
