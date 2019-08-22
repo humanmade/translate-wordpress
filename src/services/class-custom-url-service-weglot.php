@@ -33,32 +33,40 @@ class Custom_Url_Service_Weglot {
 			wp_reset_postdata();
 		}
 
-		global $post;
 		$weglot_url                = $this->request_url_services->get_weglot_url();
 		$request_without_language  = array_filter( explode( '/', $weglot_url->getPath() ), 'strlen' );
 		$index_entries             = count( $request_without_language );
 		$custom_urls               = $this->option_services->get_option( 'custom_urls' );
 		$url_lang                  = $weglot_url->getForLanguage( $key_code );
 		$original_language         = weglot_get_original_language();
-
+		$current_language          = weglot_get_current_language();
 		$condition_test_custom_url = isset( $request_without_language[ $index_entries ] ) && ! is_admin() && ! empty( $custom_urls ) && ! is_post_type_archive() && ! is_category() && ! is_tax() && ! is_archive() && ! is_front_page() && ! is_home();
 
 		if ( apply_filters( 'weglot_condition_test_custom_url', $condition_test_custom_url, $url_lang, $key_code ) ) {
 			$slug_in_work             = $request_without_language[ $index_entries ];
+            $original_slug_in_work         = $slug_in_work;
 
-			// Search from original slug
-			$key_slug = false;
-			if ( isset( $custom_urls[ $key_code ] ) && $post ) {
-				$key_slug = array_search( $post->post_name, $custom_urls[ $key_code ] ); //phpcs:ignore
+            if($current_language !== $original_language) {
+                if ( isset( $custom_urls[ $current_language ] )) {
+                    $value_slug = array_key_exists($slug_in_work, $custom_urls[$current_language]) ? $custom_urls[$current_language][$slug_in_work] : false;
+                    if ( false !== $value_slug ) {
+                        $original_slug_in_work = $value_slug;
+                    }
+                }
 			}
-			if ( false !== $key_slug ) {
-				$url_lang = str_replace( $slug_in_work, $key_slug, $url_lang );
-			} else {
-				if ( $post ) {
-					$url_lang = str_replace( $slug_in_work, $post->post_name, $url_lang );
-				}
-			}
+
+            if ( isset( $custom_urls[ $key_code ] )) {
+                $key_slug = array_search( $original_slug_in_work, $custom_urls[ $key_code ] ); //phpcs:ignore
+                if ( false !== $key_slug ) {
+                    $url_lang = str_replace($slug_in_work, $key_slug, $url_lang);
+                }
+            }
+            else {
+
+                $url_lang = str_replace( $slug_in_work, $original_slug_in_work, $url_lang );
+            }
 		}
+
 		$link_button = apply_filters( 'weglot_link_language', $url_lang, $key_code );
 
 		if (

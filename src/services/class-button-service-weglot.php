@@ -115,7 +115,7 @@ class Button_Service_Weglot {
 			$name                   = $this->get_name_with_language_entry( $current_language_entry );
 
 			$uniq_id = 'wg' . uniqid( strtotime( 'now' ) ) . rand( 1, 1000 );
-			$button_html .= sprintf( '<input id="%s" class="weglot_choice" type="checkbox" name="menu"/><label for="%s" class="wgcurrent wg-li %s" data-code-language="%s"><span>%s</span></label>', $uniq_id, $uniq_id, $flag_class . $current_language, $current_language_entry->getIso639(), $name );
+			$button_html .= sprintf( '<input id="%s" class="weglot_choice" type="checkbox" name="menu"/><label for="%s" class="wgcurrent wg-li weglot-lang %s" data-code-language="%s"><span>%s</span></label>', $uniq_id, $uniq_id, $flag_class . $current_language, $current_language_entry->getIso639(), $name );
 
 			$button_html .= '<ul>';
 
@@ -126,7 +126,7 @@ class Button_Service_Weglot {
 					continue;
 				}
 
-				$button_html .= sprintf( '<li class="wg-li %s" data-code-language="%s">', $flag_class . $key_code, $key_code );
+				$button_html .= sprintf( '<li class="wg-li weglot-lang %s" data-code-language="%s">', $flag_class . $key_code, $key_code );
 
 				$current_language_entry  = $this->language_services->get_current_language_entry_from_key( $key_code );
 				$name                    = $this->get_name_with_language_entry( $current_language_entry );

@@ -12,11 +12,11 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 
 
 /**
- * WC_Active_Weglot
+ * Wc_Active
  *
  * @since 2.0
  */
-class WC_Active_Weglot implements Third_Active_Interface_Weglot {
+class Wc_Active implements Third_Active_Interface_Weglot {
 
 	/**
 	 * WooCommerce is active ?

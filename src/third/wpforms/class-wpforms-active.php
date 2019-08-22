@@ -12,11 +12,11 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 
 
 /**
- * WPForms_Active
+ * Wpforms_Active
  *
  * @since 3.0.5
  */
-class WPForms_Active implements Third_Active_Interface_Weglot {
+class Wpforms_Active implements Third_Active_Interface_Weglot {
 
 	/**
 	 * @since 3.0.5

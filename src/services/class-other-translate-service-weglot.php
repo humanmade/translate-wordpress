@@ -70,12 +70,18 @@ class Other_Translate_Service_Weglot {
 		$object = $translate->handle();
 
 		foreach ( $object->getInputWords() as $key => $input_word ) {
-			$from_input = Helper_Json_Inline_Weglot::unformat_from_api( $input_word->getWord() );
+			$from_input = $input_word->getWord();
 
+			$input_unformat_from_api = apply_filters( 'weglot_other_words_input_unformat_from_api', true );
 			$output_unformat_from_api = apply_filters( 'weglot_other_words_unformat_from_api', true );
+			$from_input               = $from_input = $input_word->getWord();
 			$to_output                = $object->getOutputWords()[ $key ]->getWord();
+
+			if ( $input_unformat_from_api ) {
+				$from_input  = Helper_Json_Inline_Weglot::unformat_from_api( $from_input );
+			}
 			if ( $output_unformat_from_api ) {
-				$to_output  = Helper_Json_Inline_Weglot::unformat_from_api( $object->getOutputWords()[ $key ]->getWord() );
+				$to_output  = Helper_Json_Inline_Weglot::unformat_from_api( $to_output );
 			}
 
 			$from_input = preg_quote( $from_input ); // To avoid special char like | to be interpreted as regex.

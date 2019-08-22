@@ -46,14 +46,9 @@ class Generate_Switcher_Service_Weglot {
 	 * @param string $dom
 	 * @return string
 	 */
-	public function check_weglot_menu( $dom ) {
-		if ( strpos( $dom, 'menu-item-weglot' ) !== false ) {
-			$dom .= sprintf( $this->string_version, WEGLOT_VERSION );
-			return $dom;
-		}
-
-		return apply_filters( 'weglot_replace_weglot_menu', $dom );
-	}
+     public function check_weglot_menu( $dom ) {
+         return apply_filters( 'weglot_replace_weglot_menu', $dom );
+     }
 
 	/**
 	 * @since 2.3.0

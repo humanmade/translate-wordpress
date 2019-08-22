@@ -153,6 +153,12 @@ See changelog for upgrade changes.
 
 == Changelog ==
 
+
+= 3.0.7 () =
+- Add Galicia flag
+- Change wc cart reload mechanism
+-
+
 = 3.0.6 (28/05/2019) =
 * Add: Compatibility with WP Forms
 * Add: Reset postdata filter for custom URLs

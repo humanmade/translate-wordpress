@@ -1,6 +1,6 @@
 <?php
 
-namespace WeglotWP\Third\Calderaforms;
+namespace WeglotWP\Third\Edd;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -11,15 +11,12 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 
 
 
-/**
- * Caldera_Active
- *
- * @since 2.6.0
- */
-class Caldera_Active implements Third_Active_Interface_Weglot {
+class Edd_Active implements Third_Active_Interface_Weglot {
 
 	/**
-	 * @since 2.6.0
+	 * WooCommerce is active ?
+	 * @since 2.0
+	 *
 	 * @return boolean
 	 */
 	public function is_active() {
@@ -27,8 +24,10 @@ class Caldera_Active implements Third_Active_Interface_Weglot {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		}
 
-		$active = defined( 'CFCORE_VER' );
+		if ( ! is_plugin_active( 'easy-digital-downloads/easy-digital-downloads.php' ) ) {
+			return false;
+		}
 
-		return apply_filters( 'weglot_caldera_forms_is_active', $active );
+		return true;
 	}
 }

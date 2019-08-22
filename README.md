@@ -71,3 +71,6 @@ _Functioning and links_
 - Checkout
 - Redirect Thank you page
 - Email transactional
+
+### Performance
+- Checker la différence page originale / page de destination

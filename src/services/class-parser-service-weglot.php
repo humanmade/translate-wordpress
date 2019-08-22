@@ -36,7 +36,7 @@ class Parser_Service_Weglot {
 		} else {
 			$this->dom_checkers_services        = weglot_get_service( 'Dom_Checkers_Service_Weglot' );
 		}
-
+        $this->regex_checkers_services        = weglot_get_service( 'Regex_Checkers_Service_Weglot' );
 		$this->request_url_services          = weglot_get_service( 'Request_Url_Service_Weglot' );
 	}
 
@@ -89,6 +89,7 @@ class Parser_Service_Weglot {
 		} else {
 			$parser    = new Parser( $client, $config, $exclude_blocks );
 			$parser->getDomCheckerProvider()->addCheckers( $this->dom_checkers_services->get_dom_checkers() );
+			$parser->getRegexCheckerProvider()->addCheckers( $this->regex_checkers_services->get_regex_checkers() );
 			$ignored_nodes = apply_filters( 'weglot_get_parser_ignored_nodes', $parser->getIgnoredNodesFormatter()->getIgnoredNodes() );
 
 			$parser->getIgnoredNodesFormatter()->setIgnoredNodes( $ignored_nodes );
