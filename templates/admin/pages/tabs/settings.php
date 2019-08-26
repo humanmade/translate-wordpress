@@ -19,7 +19,7 @@ $options_available = [
 	'languages' => [
 		'key'         => 'destination_language',
 		'label'       => __( 'Destination languages', 'weglot' ),
-		'description' => 'Choose languages you want to translate into. Supported languages can be found <a target="_blank" href="https://weglot.com/translation-api#languages_code">here</a>.',
+		'description' => 'Choose languages you want to translate into. Supported languages can be found <a target="_blank" href="https://weglot.com/documentation/available-languages/">here</a>.',
 	],
 ];
 

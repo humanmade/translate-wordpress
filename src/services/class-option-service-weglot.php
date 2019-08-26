@@ -51,6 +51,8 @@ class Option_Service_Weglot {
 			'flag_css'                         => '',
 		],
 		'allowed' => true,
+        'has_first_settings'               => true,
+        'show_box_first_settings'          => false,
 	];
 
 	/**
