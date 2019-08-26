@@ -57,7 +57,7 @@ class Generate_Switcher_Service_Weglot {
 	 * @return string
 	 */
 	public function render_default_button( $dom ) {
-		if ( strpos( $dom, sprintf( $this->string_version, WEGLOT_VERSION ) ) !== false ) {
+		if ( strpos( $dom, 'weglot-language' ) !== false ) {
 			return $dom;
 		}
 
