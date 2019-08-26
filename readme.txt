@@ -4,7 +4,7 @@ Tags: translate, multilingual, language, translation, localization
 Requires at least: 4.5
 Tested up to: 5.1
 Requires PHP: 5.4
-Stable tag: 3.0.6
+Stable tag: 3.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ Check Weglot Translate in video:
 
 Weglot Translate benefits:
 
-- Fully compatible with all themes and plugins: Weglot Translate will translate every string in the page.
+- Fully compatible with all themes and plugins: Weglot Translate will translate every string in the page. Weglot translates WooCommerce products, checkout, order emails...
 - 60+ translation languages available
 - A unique and single place to manage all your languages and translations
 - Content automatically detected and translated: content is the only thing you need to care about.
@@ -153,11 +153,9 @@ See changelog for upgrade changes.
 
 == Changelog ==
 
-
-= 3.0.7 () =
-- Add Galicia flag
-- Change wc cart reload mechanism
--
+= 3.1.0 (29/08/2019) =
+- Add: Better JSON compatiblity
+- Bugfix: WC password reset mechanism
 
 = 3.0.6 (28/05/2019) =
 * Add: Compatibility with WP Forms
