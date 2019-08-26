@@ -73,4 +73,4 @@ _Functioning and links_
 - Email transactional
 
 ### Performance
-- Checker la différence page originale / page de destination
+- Check the difference from original page / landing page
