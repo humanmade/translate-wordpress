@@ -47,7 +47,7 @@ class Other_Translate_Service_Weglot {
 		$params = [
 			'language_from' => weglot_get_original_language(),
 			'language_to'   => weglot_get_current_language(),
-			'request_url'   => weglot_get_current_full_url(),
+			'request_url'   => weglot_get_full_url_no_language(),
 			'bot'           => BotType::HUMAN,
 		];
 
