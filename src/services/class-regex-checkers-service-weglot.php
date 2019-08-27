@@ -70,7 +70,7 @@ class Regex_Checkers_Service_Weglot {
             }
         }
 
-		return apply_filters( 'weglot_get_dom_checkers', $checkers );
+		return apply_filters( 'weglot_get_regex_checkers', $checkers );
 	}
 
 }
