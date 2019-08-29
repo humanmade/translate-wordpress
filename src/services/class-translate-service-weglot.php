@@ -95,6 +95,7 @@ class Translate_Service_Weglot {
 			switch ( $type ) {
 				case 'json':
                     $translated_content = $parser->translate( $content, $this->original_language, $this->current_language );
+                    $translated_content = json_encode($this->replace_url_services->replace_link_in_json( json_decode($translated_content , true) ));
                     $translated_content    = apply_filters( 'weglot_json_treat_page', $translated_content );
                     return $translated_content;
 				case 'html':

@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use Weglot\Parser\Parser;
+use Weglot\Util\SourceType;
 use WeglotWP\Helpers\Helper_Replace_Url_Weglot;
 
 /**
@@ -42,6 +44,26 @@ class Replace_Url_Service_Weglot {
 
 		return apply_filters( 'weglot_replace_link', $dom );
 	}
+
+    public function replace_link_in_json( $json ) {
+
+        $replace_urls = apply_filters( 'weglot_ajax_replace_urls', [ 'redirecturl', 'url', 'link' ] );
+        foreach ( $json as $key => $val ) {
+            if ( is_array( $val ) ) {
+                $json[ $key ] = $this->replace_link_in_json( $val );
+            } else {
+                if ( Parser::getSourceType( $val ) == SourceType::SOURCE_HTML ) {
+                    $json[ $key ] = $this->replace_link_in_dom( $val );
+                } else {
+                    if ( in_array( $key,  $replace_urls, true ) ) {
+                        $json[ $key ] = $this->replace_link_service->replace_url( $val );
+                    }
+                }
+            }
+        }
+
+        return $json;
+    }
 
 	/**
 	 * Replace link
@@ -107,7 +129,7 @@ class Replace_Url_Service_Weglot {
 		return (
 			(
 				( 'h' === $current_url[0] && $parsed_url['host'] === $server_host ) ||
-				( isset( $current_url[0] ) && $current_url[0] === '/' && ( isset( $current_url[1] ) ) && '/' !== $current_url[1] ) //phpcs:ignore
+				( isset( $current_url[0] ) && $current_url[0] === '/' && ( !isset( $current_url[1]) || ( isset( $current_url[1] ) ) && '/' !== $current_url[1] )) //phpcs:ignore
 			) &&
 			strpos( $current_url, $admin_url ) === false
 			&& strpos( $current_url, 'wp-login' ) === false
