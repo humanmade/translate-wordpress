@@ -388,10 +388,6 @@ class Option_Service_Weglot {
 		$exclude_blocks[]   = '.mini-cart-counter';
 		$exclude_blocks[]   = '.material-icons';
 		$exclude_blocks[]   = '.fas';
-		$exclude_blocks[]   = '#billing_state'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '#billing_country'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '#shipping_country'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '#shipping_state'; //Added for performance and not having 200 countries in Translation list
 		$exclude_blocks[]   = '.price'; //Added to prevent prices to pass
 
 		return apply_filters( 'weglot_exclude_blocks', $exclude_blocks );
