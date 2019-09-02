@@ -96,6 +96,7 @@ class Redirect_Service_Weglot {
 
         if (
             !in_array( $server_lang, $destination_languages ) && // phpcs:ignore
+            $server_lang !== weglot_get_original_language() &&
             weglot_get_original_language() === $this->request_url_services->get_current_language() &&
             ! $this->private_services->is_active_private_mode_for_lang( $server_lang ) &&
             $this->option_services->get_option('autoswitch_fallback') !== null
