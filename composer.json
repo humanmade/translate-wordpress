@@ -15,7 +15,6 @@
   ],
   "require": {
     "weglot/weglot-php": "^0.5",
-    "galbar/jsonpath": "dev-master",
     "gmulti/morphism-php": "^0.3.0"
   },
   "require-dev": {

@@ -36,7 +36,7 @@ class Request_Url_Service_Weglot {
 	 * Use for abstract \Weglot\Util\Url
 	 *
 	 * @param string $url
-	 * @return Weglot\Util\Url
+	 * @return Url
 	 */
 	public function create_url_object( $url ) {
 		return new Url(
