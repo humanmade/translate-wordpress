@@ -62,7 +62,7 @@ class Replace_Link_Service_Weglot {
 				}
 			}
 
-			$url_translated = ( strlen( $path ) > 2 && substr( $path, 0, 4 ) === "/$current_language/" ) ?
+			$url_translated = ( strlen( $path ) > 2 && strpos($path, "/$current_language/") !== false  ) ?
 				"$scheme$user$pass$host$port$path$query$fragment" : "$scheme$user$pass$host$port/$current_language$path$query$fragment";
 
 			foreach ( array_reverse( $this->multisite_service->get_list_of_network_path() ) as $np ) {
