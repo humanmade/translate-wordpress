@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use WeglotWP\Helpers\Helper_Is_Admin;
 use WeglotWP\Models\Hooks_Interface_Weglot;
 
 /**
@@ -31,6 +32,11 @@ class Search_Weglot implements Hooks_Interface_Weglot {
 	 * @return void
 	 */
 	public function hooks() {
+
+        if( Helper_Is_Admin::is_wp_admin()) {
+            return;
+        }
+
 		$search_active = $this->option_services->get_option( 'active_search' );
 
 		if ( $search_active ) {

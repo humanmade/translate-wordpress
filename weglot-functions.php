@@ -148,7 +148,7 @@ function weglot_get_translate_amp_translation() {
  * @return string
  */
 function weglot_get_current_full_url() {
-	return Context_Weglot::weglot_get_context()->get_service( 'Request_Url_Service_Weglot' )->get_full_url();
+	return weglot_create_url_object( weglot_get_request_url_service()->get_full_url() )->getForLanguage( weglot_get_current_language() );
 }
 
 /**
@@ -185,7 +185,7 @@ function weglot_has_auto_redirect() {
  * @return boolean
  */
 function weglot_current_url_is_eligible() {
-	$full_url = weglot_get_current_full_url();
+	$full_url = weglot_get_full_url_no_language();
 	return weglot_is_eligible_url( $full_url );
 }
 

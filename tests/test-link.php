@@ -52,6 +52,6 @@ class LinkTest extends WP_UnitTestCase {
 			false
 		);
 
-		$this->assertEquals( $dom->find( '#menu-item-53 a', 0 )->href, 'http://weglot-plugin.local/fr/#propos' );
+		$this->assertEquals( 'http://weglot-plugin.local/fr/#propos' ,  $dom->find( '#menu-item-53 a', 0 )->href );
 	}
 }

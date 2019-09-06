@@ -273,31 +273,6 @@ $languages = array_values( $languages );
 	</tbody>
 </table>
 
-<div class="notice notice-info is-dismissible">
-	<p>
-		<?php esc_html_e( 'If you need any help, you can contact us via email us at support@weglot.com.', 'weglot' ); ?>
-	</p>
-	<p>
-		<?php
-			// translators: 1 Latest weglot version
-			$text = __( 'You can also return to version %s by clicking on the button below', 'weglot' );
-			$text = sprintf( $text, WEGLOT_LATEST_VERSION );
-
-			echo esc_html( $text );
-		?>
-	</p>
-	<p>
-		<a href="<?php echo wp_nonce_url( admin_url( 'admin-post.php?action=weglot_rollback' ), 'weglot_rollback' ); //phpcs:ignore ?>" class="button">
-			<?php
-				// translators: 1 Latest weglot version
-				$text = __( 'Re-install version %s', 'weglot' );
-				$text = sprintf( $text, WEGLOT_LATEST_VERSION );
-				echo esc_html( $text );
-			?>
-		</a>
-	</p>
-</div>
-
 <template id="tpl-exclusion-url">
 	<div class="item-exclude">
 		<select

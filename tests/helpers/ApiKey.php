@@ -21,7 +21,6 @@ class ApiKey  {
 			self::$api_key = $response['result']['api_key'];
 		}
 
-		return self::$api_key;
-
+		return $api_key;
 	}
 }

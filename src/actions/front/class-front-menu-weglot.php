@@ -38,10 +38,6 @@ class Front_Menu_Weglot implements Hooks_Interface_Weglot {
 			return;
 		}
 
-		if ( ! $this->option_services->get_option( 'allowed' ) ) {
-			return;
-		}
-
 		add_filter( 'wp_get_nav_menu_items', [ $this, 'weglot_wp_get_nav_menu_items' ], 20 );
 		add_filter( 'nav_menu_link_attributes', [ $this, 'add_nav_menu_link_attributes' ], 10, 2 );
 		add_filter( 'wp_nav_menu_objects', [ $this, 'wp_nav_menu_objects' ] );
@@ -93,7 +89,7 @@ class Front_Menu_Weglot implements Hooks_Interface_Weglot {
 			$id = $item->ID;
 			$i  = 0;
 
-			$classes          = [ 'weglot-lang', 'menu-item-weglot' ];
+			$classes          = [ 'weglot-lang', 'menu-item-weglot' , 'weglot-language' ];
 			$options          = $this->option_services->get_option( 'menu_switcher' );
 			$with_flags       = $this->option_services->get_option_button( 'with_flags' );
 			$dropdown         = 0;

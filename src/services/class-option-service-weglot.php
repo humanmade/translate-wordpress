@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Morphism\Morphism;
 use Weglot\Util\Regex;
+use WeglotWP\Helpers\Helper_Is_Admin;
 use WeglotWP\Models\Schema_Option_V3;
 use WeglotWP\Helpers\Helper_Flag_Type;
 use WeglotWP\Helpers\Helper_API;
@@ -51,6 +52,8 @@ class Option_Service_Weglot {
 			'flag_css'                         => '',
 		],
 		'allowed' => true,
+        'has_first_settings'               => true,
+        'show_box_first_settings'          => false,
 	];
 
 	/**
@@ -257,12 +260,12 @@ class Option_Service_Weglot {
 		$api_key         = $this->get_api_key();
 		$api_key_private = $this->get_api_key_private();
 
-		if ( is_admin() && $api_key_private ) {
+		if ( Helper_Is_Admin::is_wp_admin() && $api_key_private ) {
 			$response = $this->get_options_from_api_with_api_key(
 				$api_key_private
 			);
 		} else {
-			if ( ! is_admin() && $api_key ) {
+			if ( ! Helper_Is_Admin::is_wp_admin() && $api_key ) {
 				$response = $this->get_options_from_cdn_with_api_key(
 					$api_key
 				);
@@ -386,11 +389,7 @@ class Option_Service_Weglot {
 		$exclude_blocks[]   = '.mini-cart-counter';
 		$exclude_blocks[]   = '.material-icons';
 		$exclude_blocks[]   = '.fas';
-		$exclude_blocks[]   = '#billing_state'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '#billing_country'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '#shipping_country'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '#shipping_state'; //Added for performance and not having 200 countries in Translation list
-		$exclude_blocks[]   = '.price'; //Added to prevent prices to pass
+		$exclude_blocks[]   = '.amount'; //Added to prevent prices to pass
 
 		return apply_filters( 'weglot_exclude_blocks', $exclude_blocks );
 	}

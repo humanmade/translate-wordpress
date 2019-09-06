@@ -51,7 +51,7 @@ class TranslateJsonTest extends WP_UnitTestCase {
 			false
 		);
 
-		$this->assertContains( 'Voir le panier', $dom->__toString() );
+		$this->assertContains( 'Voir panier', $dom->__toString() );
 		$this->assertContains( 'http:\/\/weglot-plugin.local\/fr\/', $dom->__toString() );
 	}
 
@@ -70,7 +70,7 @@ class TranslateJsonTest extends WP_UnitTestCase {
 			false
 		);
 
-		$this->assertContains( 'Aucun produit dans le chariot', $dom->__toString() );
+		$this->assertContains( 'Aucun produit dans le panier', $dom->__toString() );
 	}
 
 	public function test_translation_api_request() {
