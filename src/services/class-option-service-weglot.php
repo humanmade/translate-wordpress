@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Morphism\Morphism;
 use Weglot\Util\Regex;
+use WeglotWP\Helpers\Helper_Is_Admin;
 use WeglotWP\Models\Schema_Option_V3;
 use WeglotWP\Helpers\Helper_Flag_Type;
 use WeglotWP\Helpers\Helper_API;
@@ -259,12 +260,12 @@ class Option_Service_Weglot {
 		$api_key         = $this->get_api_key();
 		$api_key_private = $this->get_api_key_private();
 
-		if ( is_admin() && $api_key_private ) {
+		if ( Helper_Is_Admin::is_wp_admin() && $api_key_private ) {
 			$response = $this->get_options_from_api_with_api_key(
 				$api_key_private
 			);
 		} else {
-			if ( ! is_admin() && $api_key ) {
+			if ( ! Helper_Is_Admin::is_wp_admin() && $api_key ) {
 				$response = $this->get_options_from_cdn_with_api_key(
 					$api_key
 				);

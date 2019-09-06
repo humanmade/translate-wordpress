@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use WeglotWP\Helpers\Helper_Is_Admin;
 use WeglotWP\Models\Hooks_Interface_Weglot;
 
 /**
@@ -30,6 +31,10 @@ class WC_Cart_Reload_Weglot implements Hooks_Interface_Weglot {
 	 * @return void
 	 */
 	public function hooks() {
+        if( Helper_Is_Admin::is_wp_admin()) {
+            return;
+        }
+
 		if ( ! $this->wc_active_services->is_active() ) {
 			return;
 		}

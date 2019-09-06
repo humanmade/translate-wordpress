@@ -55,7 +55,7 @@ class Replace_Url_Service_Weglot {
                 if ( Parser::getSourceType( $val ) == SourceType::SOURCE_HTML ) {
                     $json[ $key ] = $this->replace_link_in_dom( $val );
                 } else {
-                    if ( in_array( $key,  $replace_urls, true ) ) {
+                    if ( in_array( $key,  $replace_urls, true ) && $this->check_link($val) ) {
                         $json[ $key ] = $this->replace_link_service->replace_url( $val );
                     }
                 }
