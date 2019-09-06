@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-	const getOffset = (element) => {
+	function getOffset(element) {
 		let top = 0, left = 0;
 		do {
 			top += element.offsetTop || 0;
