@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 use WeglotWP\Helpers\Helper_Tabs_Admin_Weglot;
 
-$options_available = [
+$options_available = apply_filters( 'weglot_tabs_admin_options_available', [
 	'api_key_private' => [
 		'key'         => 'api_key_private',
 		'label'       => __( 'API Key', 'weglot' ),
@@ -21,7 +21,7 @@ $options_available = [
 		'label'       => __( 'Destination languages', 'weglot' ),
 		'description' => 'Choose languages you want to translate into. Supported languages can be found <a target="_blank" href="https://weglot.com/documentation/available-languages/">here</a>.',
 	],
-];
+] );
 
 $languages          = $this->language_services->get_languages_available( [
 	'sort' => true,
