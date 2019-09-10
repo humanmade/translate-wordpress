@@ -154,6 +154,8 @@ See changelog for upgrade changes.
 == Changelog ==
 
 = 3.1.1 (11/09/2019) =
+- Add: IE 11 compatibility with languages switcher
+- Add: WP-CLI compatibility
 - Bugfix: admin api call
 - Bugfix: double language when WC + multisite with subdomains
 - Bugfix: do not add language on external links also in JSON
