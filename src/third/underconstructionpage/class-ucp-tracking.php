@@ -21,7 +21,7 @@ class UCP_Tracking implements Hooks_Interface_Weglot {
 	 * @return void
 	 */
 	public function __construct() {
-		$this->ucp_active_services = weglot_get_service( 'UCP_Active' );
+		$this->ucp_active_services = weglot_get_service( 'Ucp_Active' );
 	}
 
 	/**

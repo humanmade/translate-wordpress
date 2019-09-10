@@ -65,7 +65,7 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\NinjaForms\Ninja_Active',
             '\WeglotWP\Third\Woocommerce\Wc_Active',
 			'\WeglotWP\Third\WPForms\Wpforms_Active',
-			'\WeglotWP\Third\UnderConstructionPage\UCP_Active',
+			'\WeglotWP\Third\UnderConstructionPage\Ucp_Active',
         ];
 
         self::$context->set_services( $services );

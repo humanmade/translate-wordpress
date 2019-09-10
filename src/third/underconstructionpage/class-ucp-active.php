@@ -11,11 +11,11 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 
 
 /**
- * UCP_Active
+ * Ucp_Active
  *
  * @since 3.1.1
  */
-class UCP_Active implements Third_Active_Interface_Weglot {
+class Ucp_Active implements Third_Active_Interface_Weglot {
 
 	/**
 	 * @since 3.1.1
