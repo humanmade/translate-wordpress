@@ -73,4 +73,3 @@ _Functioning and links_
 - Email transactional
 
 ### Performance
-- Check the difference from original page / landing page

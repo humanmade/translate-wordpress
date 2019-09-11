@@ -64,7 +64,8 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\Gravityforms\Gf_Active',
             '\WeglotWP\Third\NinjaForms\Ninja_Active',
             '\WeglotWP\Third\Woocommerce\Wc_Active',
-            '\WeglotWP\Third\WPForms\Wpforms_Active',
+			'\WeglotWP\Third\WPForms\Wpforms_Active',
+			'\WeglotWP\Third\UnderConstructionPage\Ucp_Active',
         ];
 
         self::$context->set_services( $services );
@@ -97,6 +98,7 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\Gravityforms\GF_Filter_Urls',
             '\WeglotWP\Third\Woocommerce\WC_Filter_Urls_Weglot',
             '\WeglotWP\Third\Woocommerce\WC_Cart_Reload_Weglot',
+			'\WeglotWP\Third\UnderConstructionPage\Ucp_Tracking',
         ];
 
         self::$context->set_actions( $actions );
