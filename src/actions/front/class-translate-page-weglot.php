@@ -216,13 +216,10 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 		$request_without_language = array_values(array_filter( explode( '/', str_replace(
 			'/' . $current_language . '/',
 			'/',
-			$_SERVER['REQUEST_URI'] //phpcs:ignore
-		) ), 'strlen' ));
+            strpos($_SERVER['REQUEST_URI'], "?") ? substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], "?")) : $_SERVER['REQUEST_URI']
+        ) ), 'strlen' ));
 
 		$index_entries = count( $request_without_language ) - 1;
-		if ( 0 === strpos($request_without_language[$index_entries], '?') ) {
-			$index_entries = count( $request_without_language ) - 2;
-		}
 
 		if ( isset( $request_without_language[ $index_entries ] ) ) {
 			$slug_in_work  = $request_without_language[ $index_entries ];
