@@ -7,7 +7,7 @@ Author: Weglot Translate team
 Author URI: https://weglot.com/
 Text Domain: weglot
 Domain Path: /languages/
-Version: 3.1.1
+Version: 3.1.2
 */
 
 /**

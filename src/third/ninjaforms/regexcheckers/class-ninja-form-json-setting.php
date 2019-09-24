@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Ninja_Form_Json_Setting
 {
-    const REGEX = '#form.settings=(.*?);#';
+    const REGEX = '#form.settings=(.*?);form#';
 
     const TYPE = SourceType::SOURCE_JSON;
 
