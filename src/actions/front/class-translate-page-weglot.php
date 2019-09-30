@@ -220,7 +220,6 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
         ) ), 'strlen' ));
 
 		$index_entries = count( $request_without_language ) - 1;
-
 		if ( isset( $request_without_language[ $index_entries ] ) ) {
 			$slug_in_work  = $request_without_language[ $index_entries ];
 		}
