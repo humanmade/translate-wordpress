@@ -66,6 +66,7 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\Woocommerce\Wc_Active',
 			'\WeglotWP\Third\WPForms\Wpforms_Active',
 			'\WeglotWP\Third\UnderConstructionPage\Ucp_Active',
+			'\WeglotWP\Third\MailOptin\Mailoptin_Active',
         ];
 
         self::$context->set_services( $services );
@@ -101,7 +102,7 @@ abstract class Context_Weglot {
 			'\WeglotWP\Third\UnderConstructionPage\Ucp_Tracking',
         ];
 
-        self::$context->set_actions( $actions );
+		self::$context->set_actions( $actions );
 
         return self::$context;
     }
