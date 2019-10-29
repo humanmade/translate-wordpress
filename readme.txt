@@ -153,21 +153,29 @@ See changelog for upgrade changes.
 
 == Changelog ==
 
+= 3.1.3 (29/10/2019) =
+* Improve compatibility: Woocommerce with IE 11
+* Improve compatibility: Contact Form 7
+* Improve compatibility: MailOptin
+* Improve compatibility: The Event Calendar
+* Improve compatibility: Font Awesome
+* Add default exclude block: address
+
 = 3.1.2 (24/09/2019) =
-- Bugfix: Custom URL with GET parameters
-- Bugfix: Ninja Forms JSON translate
-- Bugfix: Prevent errors due to call protected method
+* Bugfix: Custom URL with GET parameters
+* Bugfix: Ninja Forms JSON translate
+* Bugfix: Prevent errors due to call protected method
 
 = 3.1.1 (11/09/2019) =
-- Add: IE 11 compatibility with languages switcher
-- Add: WP-CLI compatibility
-- Bugfix: admin api call
-- Bugfix: double language when WC + multisite with subdomains
-- Bugfix: do not add language on external links also in JSON
+* Add: IE 11 compatibility with languages switcher
+* Add: WP-CLI compatibility
+* Bugfix: admin api call
+* Bugfix: double language when WC + multisite with subdomains
+* Bugfix: do not add language on external links also in JSON
 
 = 3.1.0 (29/08/2019) =
-- Add: Better JSON compatiblity
-- Bugfix: WC password reset mechanism
+* Add: Better JSON compatiblity
+* Bugfix: WC password reset mechanism
 
 = 3.0.6 (28/05/2019) =
 * Add: Compatibility with WP Forms
