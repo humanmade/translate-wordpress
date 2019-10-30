@@ -2,7 +2,7 @@
 Contributors: remyb92, gmulti, wysija, wpr0ck
 Tags: translate, multilingual, language, translation, localization
 Requires at least: 4.5
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.4
 Stable tag: 3.1.3
 License: GPLv2 or later
