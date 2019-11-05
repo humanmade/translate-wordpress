@@ -73,7 +73,7 @@ You can help make the Weglot Translate plugin available in more languages on [__
 Weglot Translate is easy to set up:
 
 1. Go to [https://dashboard.weglot.com/register-wordpress](https://dashboard.weglot.com/register-wordpress) to set up an account.
-2. Copy your API key from your Weglot dashboard. It will look something like: “wg_XXXXXXXX”.
+2. Copy your API key from your Weglot dashboard. It will look something like: “wg_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”.
 3. Find the Weglot Translate settings page on the bottom left of your WordPress admin dashboard.
 4. Paste your API key into the appropriate space under Weglot Translate settings, and click save. Then enter your website’s original language and the translation languages you want.
 5. Now’s the fun part: personalize your translation button style (add or delete flag icons, make the language list a dropdown if you want, display each language’s full name or 2-letter language code...)
@@ -164,7 +164,6 @@ If you have any questions about Weglot Translate, please post a topic on the [su
 
 * WordPress 4.5 or greater
 * PHP version 5.4 or greater
-* Rewrite rules activated
 
 
 = WEGLOT TRANSLATE INSTRUCTIONS =
@@ -174,7 +173,7 @@ Weglot Translate is easy to set up:
 [youtube http://www.youtube.com/watch?v=cdoBED8p3HQ]
 
 1. Go to [https://dashboard.weglot.com/register-wordpress](https://dashboard.weglot.com/register-wordpress) to set up an account.
-2. Copy your API key from your Weglot dashboard. It will look something like: “wg_XXXXXXXX”.
+2. Copy your API key from your Weglot dashboard. It will look something like: “wg_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx”.
 3. Find the Weglot Translate settings page on the bottom left of your WordPress admin dashboard.
 4. Paste your API key into the appropriate space under Weglot Translate settings, and click save. Then enter your website’s original language and the translation languages you want.
 5. Now’s the fun part: personalize your translation button style (add or delete flag icons, make the language list a dropdown if you want, display each language’s full name or 2-letter language code...)

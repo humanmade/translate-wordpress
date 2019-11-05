@@ -102,6 +102,8 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\Woocommerce\WC_Filter_Urls_Weglot',
             '\WeglotWP\Third\Woocommerce\WC_Cart_Reload_Weglot',
 			'\WeglotWP\Third\UnderConstructionPage\Ucp_Tracking',
+			'\WeglotWP\Third\TheEventsCalendar\Theeventscalendar_Words',
+            '\WeglotWP\Third\Contactform7\Contactform7_Json_Keys',
         ];
 
 		self::$context->set_actions( $actions );
