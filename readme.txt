@@ -69,6 +69,7 @@ You can help make the Weglot Translate plugin available in more languages on [__
 
 
 = Weglot translate instructions =
+
 Weglot Translate is easy to set up:
 
 1. Go to [https://dashboard.weglot.com/register-wordpress](https://dashboard.weglot.com/register-wordpress) to set up an account.
@@ -84,6 +85,7 @@ When you’re ready, you can edit your translations directly in [your account](h
 
 
 == Frequently Asked Questions ==
+
 
 = Is Weglot Translate free? =
 
@@ -156,15 +158,17 @@ Yes, you can use Weglot Translate to translate WooCommerce store sites without a
 If you have any questions about Weglot Translate, please post a topic on the [support forum](https://wordpress.org/support/plugin/weglot) or contact us at support@weglot.com.
 
 
- == Instructions ==
+== Instructions ==
 
 = WEGLOT MINIMUM REQUIREMENTS =
+
 * WordPress 4.5 or greater
 * PHP version 5.4 or greater
 * Rewrite rules activated
 
 
 = WEGLOT TRANSLATE INSTRUCTIONS =
+
 Weglot Translate is easy to set up:
 
 [youtube http://www.youtube.com/watch?v=cdoBED8p3HQ]
@@ -188,7 +192,9 @@ When you’re ready, you can edit your translations directly in [your account](h
 3. Weglot Translate dashboard, translation edition
 4. Weglot Translate visual editor
 
+
 == Upgrade Notice ==
+
 See changelog for upgrade changes.
 
 
