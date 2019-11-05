@@ -201,6 +201,7 @@ See changelog for upgrade changes.
 * Improve compatibility: The Event Calendar
 * Improve compatibility: Font Awesome
 * Add default exclude block: address
+* Bugfix: Do not cache page if API answers error
 
 = 3.1.2 (24/09/2019) =
 * Bugfix: Custom URL with GET parameters
