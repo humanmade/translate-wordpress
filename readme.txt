@@ -1,145 +1,189 @@
 === Translate WP website - Weglot Translate ===
-Contributors: remyb92, gmulti, wysija
+Contributors: remyb92, gmulti, wysija, wpr0ck
 Tags: translate, multilingual, language, translation, localization
 Requires at least: 4.5
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.4
-Stable tag: 3.1.2
+Stable tag: 3.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Translate your website into multiple languages without any code. Weglot Translate is fully SEO compatible and follows Google’s best practices.
 
 == Description ==
-The best and easiest translation solution to translate your WordPress website and go multilingual:
-Weglot Translate detects and translates all your content in any language and provides
-a unique dashboard to edit translations or purchase professional translations to ensure the quality of translations.
 
-With Weglot Translate, you can translate your site into a multilingual website with multiple languages in minutes without doing any code.
-Weglot Translate is totally SEO compatible. Weglot Translate follows Google's best practice in terms of multilingual websites to serve a translated webpage with clean source code. Every translated version of your website will be indexed by Google.
-
-Weglot Translate, a WP multi language plugin, is trusted by companies in e-commerce, SaaS, marketplaces, corporate websites, mobile application landing pages, blogs, etc.
+Weglot Translate is the best and easiest translation plugin to translate your WordPress website and go multilingual.
+Weglot Translate translates all your content into any language and provides.
+a one-stop dashboard to edit translations or outsource to professional translators, to ensure that your translations are of the highest quality.
+With Weglot Translate, you can translate your site into a multilingual website in minutes without coding anything.
+Weglot Translate is SEO compatible. Plus, Weglot Translate follows Google’s best practices for multilingual websites, serving all translated webpages with clean source code. Every translated version of your website will be indexed by Google.
+Weglot Translate is trusted by e-commerce (WooCommerce) companies, SaaS firms, marketplaces, corporate websites, mobile application landing pages, blogs, and more.
 
 Check Weglot Translate in video:
 
 [youtube https://www.youtube.com/watch?v=wmZLvhWX29k]
 
-Weglot Translate benefits:
 
-- Fully compatible with all themes and plugins: Weglot Translate will translate every string in the page. Weglot translates WooCommerce products, checkout, order emails...
-- 60+ translation languages available
-- A unique and single place to manage all your languages and translations
-- Content automatically detected and translated: content is the only thing you need to care about.
-- You do not need to search for translation files (.po) or any other WordPress source files.
-- Translations constantly displayed in real-time
-- Access to professional translators if you need quality translations.
-- Optimized SEO in new languages with dedicated URLs: translated pages will have dedicated URLs, as Google best practice for multilingual sites.
-- Language switch button is customizable.
+= Weglot Translate benefits: =
 
-Is Weglot Translate free?
+- Fully compatible with all themes and plugins: Weglot Translate will translate every string on every page of your site, no matter where it was generated. Weglot translates WooCommerce products, checkout, order emails…
+- 100+ translation languages available
+- Human and automatic translations: A single dashboard to manage and edit all of your translations
+- Content automatically detected and translated. You do not need to search for translation files (.po) or any other WordPress source files.
+- Translations are updated in real time.
+- Access to professional translators, if needed
+- Optimized SEO in new languages with dedicated URLs: translated pages will have dedicated URLs, as Google recommends for multilingual sites.
+- Your language switch button is completely customizable.
+
+
+= Is Weglot Translate free? =
 
 Weglot Translate is free for small websites (under 2000 words) with one translation language.
-Weglot Translate has Free and Premium plans available on the [pricing page](https://weglot.com/pricing), depending on your needs. You can always take the Weglot Translate free trial version to test it.
-Weglot Translate offers professional support to premium users to help them translate their websites.
+Weglot Translate has Free and Premium plans available on the pricing page, depending on your needs. You can always try out the Weglot Translate 10-day free trial version.
+Weglot Translate offers professional support to all users to help them translate their websites, with priority accorded to premium members.
 
-Can I migrate from WPML or Polylang to Weglot Translate?
 
-Yes, you can easily migrate to Weglot Translate. Simply deactivate WPML or Polylang to only have one multilingual plugin. Then start using Weglot Translate normally. If you need to import some translations contact us directly at support@weglot.com
+= Can I migrate from WPML or Polylang to Weglot Translate? =
 
-Does Weglot Translate provide support?
+Yes, you can easily migrate from Polylang or WPML to Weglot Translate. Simply deactivate whichever translation plugin—like WPML or Polylang—you already have; you’ll immediately be able to start using Weglot Translate.
+If you need to import any preexisting translations, feel free to contact us directly at support@weglot.com.
 
-Yes, the Weglot Translate team will support everyone. Post a topic on the [support forum](https://wordpress.org/support/plugin/weglot) or email us at support@weglot.com or speak with us on our live chat on the Weglot website.
 
-Weglot Translate plugin is translated in Dutch, English_UK, French, German, Italian, Portuguese_BR, Russian and Spanish. More translations will be added.
+= Does Weglot Translate provide support? =
 
-Weglot Translate, go multilingual now.
+Yes, the Weglot Translate team will support everyone. Post a topic on the support forum,email us at support@weglot.com.
+Weglot Translate: go multilingual now.
+
 
 = Help translate the plugin =
 
-You can help translate Weglot Translate plugin on [__translate.wordpress.org__](https://translate.wordpress.org/projects/wp-plugins/weglot).
+You can help make the Weglot Translate plugin available in more languages on [__translate.wordpress.org__](https://translate.wordpress.org/projects/wp-plugins/weglot).
+
 
 == Installation ==
 
-= Minimum Requirements for Weglot Translate =
+= Weglot minimum requirements =
 * WordPress 4.5 or greater
 * PHP version 5.4 or greater
 * Rewrite rules activated
 
-= Installation steps for Weglot Translate =
+
+= Weglot translate instructions =
+
 Weglot Translate is easy to set up:
 
 1. Go to [https://dashboard.weglot.com/register-wordpress](https://dashboard.weglot.com/register-wordpress) to set up an account.
-2. Grab your api_key from your dashboard, it looks like "wg_XXXXXXX"
+2. Copy your API key from your Weglot dashboard. It will look something like: “wg_XXXXXXXX”.
 3. Find the Weglot Translate settings page on the bottom left of your WordPress admin dashboard.
-4. Add and save your api key to Weglot Translate settings, enter your website's original language and enter the translation languages you want, separated by commas (for instance en,de,pt to have translations in English, German and Portuguese).
-5. Choose the appearance for the translation button (flags, list or dropdown, translation language fullname or code).
-6. Click on the Save button.
-7. (Optional) Go to Appearance -&gt; Widgets and drag and drop the "Weglot Translate" widget where you want it to appear.
-8. Refresh your web page, your website is now available in the selected translation languages. You can switch languages to see translated pages.
-9. If you want, you can edit your translations directly in [your account](https://dashboard.weglot.com/translations/)
+4. Paste your API key into the appropriate space under Weglot Translate settings, and click save. Then enter your website’s original language and the translation languages you want.
+5. Now’s the fun part: personalize your translation button style (add or delete flag icons, make the language list a dropdown if you want, display each language’s full name or 2-letter language code...)
+6. Click “Save.”.
+7.(Optional) Go to Appearance -&gt; Widgets, then drag and drop the « Weglot Translate » widget where you want it to appear.
+Refresh your web page.Your website is now available in the selected translation languages. You can switch languages to see your live translated pages.
+
+When you’re ready, you can edit your translations directly in [your account](https://dashboard.weglot.com/translations/).
 
 
 == Frequently Asked Questions ==
+
+
 = Is Weglot Translate free? =
+
 Weglot Translate is a freemium plugin: it is free for small websites (under 2000 words) with one translation language. If you need more, you can upgrade. Details of our pricing can be found [here](https://weglot.com/pricing)
+Anyone can try Weglot Translate free for 10 days.
 
-In any case, you can try Weglot Translate free for 10 days.
+
 = Edit my translations =
-With Weglot Translate, you can modify translations in "Translations" in your Weglot [account here](https://dashboard.weglot.com/translations/). If you change a translation, it's automatically saved and displayed on your website.
-= The translations I edited are not displayed on my website. =
 
-All translations edited in your dashboard are automatically displayed in real-time in the translated versions of your website. If you can not see your new translations:
+With Weglot Translate, you can modify translations under the « Translations » tab in your Weglot account, [here](https://dashboard.weglot.com/translations/). If you change a translation, it’s automatically saved and displayed on your website.
 
-1. Empty your cache plugin: it will enable new translations to be properly displayed. If it's still not showing your new translations then:
 
-2. Go into your Weglot account and check you edited the right translations: use the search bar (at the top) to easily find translations you want to edit. Sometimes you can have 2 very similar translations and edited the wrong one.
+= The translations I edited are not displayed on my website =
+
+All translations edited in your dashboard are automatically displayed in real-time on the translated versions of your website. If you can not see your new translations:
+
+1. Clear your cache plugin: it will enable new translations to be properly displayed. If your new translations still don’t show up, then:
+2. Go into your Weglot account and check you edited the right translations. Use the search bar (at the top) to easily find the translations you want to edit. It’s possible that you have 2 very similar translations, and may have simply edited the wrong one.
+
 
 = Change the appearance of the Weglot Translate language button =
-You can change one of the three set-up items in your Weglot Translate settings (with/without flags, horizontal or dropdown menu, full language name or 2-letter code) or overwrite the CSS.
+
+You can change any of the three pre-set button parameters in your Weglot Translate settings (display/don’t display flags, horizontal or dropdown menu, full language name or 2-letter code), or overwrite the CSS with personalized settings.
+
+
 = Change the position of the Weglot Translate language button =
-With widget areas, you can drag and drop the Weglot Translate widget.
 
-Alternatively, use overwrite CSS to change the Weglot Translate button position or ask the Weglot Translate team at support@weglot.com. We will help you.
+* With widget areas, you can drag and drop the Weglot Translate widget.
+* Alternatively, you can overwrite the existing CSS to change the Weglot Translate button position or ask the Weglot Translate team at support@weglot.com. We will help you.
+* You can also put the button in your site’s navigation menu by checking the option in the Weglot settings page. Be aware that putting the button in the menu might change the appearance of the button a bit, as there are already some style (CSS) rules active in the menu.
+* You can additionally use a shortcode: [weglot_switcher]
+* Finally, you can also add <div id="weglot_here"></div> anywhere in your code and a Weglot button will be positioned at this location.
 
-You can also put the button in the navigation menu by checking the option in the Weglot settings page. Be aware that putting the button in the menu might change the appearance of the button a bit as there are already some style (CSS) rules active in the menu.
 
-You can additionally use a shortcode: [weglot_switcher]
-
-Finally, you can also add &lt;div id=&quot;weglot_here&quot;&gt;&lt;/div&gt; anywhere in your code and a Weglot button will be positioned at this place.
 = SEO and translations =
-Weglot Translate creates a dedicated URL for each language to ensure the proper indexation of your translated content by Search Engines (Google, ...). SEO tags are also translated and editable in your Weglot Translate account. Translated pages will be on a sub-directory.
+
+Weglot Translate creates a dedicated URL for each language to ensure the proper indexation of your translated content on search engines (Google, …). SEO tags are also translated and editable within your Weglot Translate account. Translated pages will each be located on a subdirectory.
+
+
 = Translated URLs =
-Weglot Translate chooses to not translate URLs, as this could break URLs with non-Roman characters (for example, Chinese, Russian alphabets) and it has no proven impact on SEO. Finally, Google, Amazon, Airbnb, etc... are not doing it.
-= Translate image/video =
-With Weglot Translate, you can add different images for different languages. This is useful if you have text in an image and you want to display a translated image in your translated version. To do this, you can simply upload your other translated image in your gallery and then link it by going to your dashboard and searching for the original URL in the translations list.
+
+Weglot Translate does not translate URLs, as this could break URLs with non-Roman characters (for example, on sites in languages using theChinese or Cyrillic alphabets) and it has no proven impact on SEO. Rest assured: the internet’s biggest sites, likeGoogle, Amazon, Airbnb, etc… don’t do this, either.
+
+
+= Translate images/videos =
+
+With Weglot Translate, you can add different images for different languages. This is useful if you have text in an image and you want to display a “translated” image in your translated version. To do this, you can simply upload your other translated image into your WordPress gallery. Then, you can link it to the correct translated version of your site by going to your Weglot dashboard and searching for the original URL in the translations list; replace this URL with the newly-uploaded “translated” image’s URL in the translation column.
+
+
 = Translation exclusions =
-You can exclude pages from translations if you don't want them to be translated or just part of pages by using CSS selectors.
-To do this, go in the WordPress panel -&gt; Weglot settings page and use the field "Translation Exclusion".
+
+You can exclude pages, or parts of pages, from translation if you don’t want them to be translated, by using CSS selectors.
+To do this, go into the WordPress admin panel --&gt; Weglot settings,and use the field « Translation Exclusion ».
 
 = Translation exceptions =
+
 You can create your own translation rules in your Weglot dashboard by clicking on Translation Options, allowing you to:
 
-1. Add Exception Rules, such as "Never translate" or "Always translate" a word/expression in a custom way (for example, if you do not want to translate your brand name).
+1. Add Exception Rules, such as « Never translate » or « Always translate » a word/expression in a custom way (for example, if you do not want to translate your brand name).
+2. Use the « Search and Replace » tool to easily search for a word in all your translations and replace it with the one you want.
 
-2. Use the "Search and Replace" tool to easily search for a word in all your translations and replace it with the one you want.
+
+= Is Weglot Translate compatible with WooCommerce? =
+
+Yes, you can use Weglot Translate to translate WooCommerce store sites without any compatibility issues. Even your checkout page is translated—and the translations are editable from your Weglot Translate dashboard.
+
 
 = Support =
-If you have any questions about Weglot Translate, please post a topic on the [support forum](https://wordpress.org/support/plugin/weglot) or contact us at support@weglot.com or directly using our live chat on [https://weglot.com] (https://weglot.com).
 
- == Instructions ==
+If you have any questions about Weglot Translate, please post a topic on the [support forum](https://wordpress.org/support/plugin/weglot) or contact us at support@weglot.com.
+
+
+== Instructions ==
+
+= WEGLOT MINIMUM REQUIREMENTS =
+
+* WordPress 4.5 or greater
+* PHP version 5.4 or greater
+* Rewrite rules activated
+
+
+= WEGLOT TRANSLATE INSTRUCTIONS =
+
 Weglot Translate is easy to set up:
 
 [youtube http://www.youtube.com/watch?v=cdoBED8p3HQ]
 
-1. Go to [https://dashboard.weglot.com/register-wordpress](https://dashboard.weglot.com/register-wordpress) to set up an account
-2. Grab your api_key from your dashboard, it looks like "wg_XXXXXXX"
+1. Go to [https://dashboard.weglot.com/register-wordpress](https://dashboard.weglot.com/register-wordpress) to set up an account.
+2. Copy your API key from your Weglot dashboard. It will look something like: “wg_XXXXXXXX”.
 3. Find the Weglot Translate settings page on the bottom left of your WordPress admin dashboard.
-4. Add and save your api key to Weglot Translate settings, enter your website's original language and enter the translation languages you want, separated by commas (for instance en,de,pt to have translations in English, German and Portuguese).
-5. Choose the appearance for the translation button (flags, list or dropdown, translation language fullname or code)
-6. Click on the Save button.
-7. (Optional) Go to Appearance -> Widgets and drag and drop the "Weglot Translate" widget where you want it to appear.
-8. Refresh your web page, your website is now available in the selected translation languages. You can switch languages to see translated pages.
-9. If you want, you can edit your translations directly in [your account](https://dashboard.weglot.com/translations/)
+4. Paste your API key into the appropriate space under Weglot Translate settings, and click save. Then enter your website’s original language and the translation languages you want.
+5. Now’s the fun part: personalize your translation button style (add or delete flag icons, make the language list a dropdown if you want, display each language’s full name or 2-letter language code...)
+6. Click “Save.”.
+7.(Optional) Go to Appearance -&gt; Widgets, then drag and drop the « Weglot Translate » widget where you want it to appear.
+Refresh your web page.Your website is now available in the selected translation languages. You can switch languages to see your live translated pages.
+
+When you’re ready, you can edit your translations directly in [your account](https://dashboard.weglot.com/translations/).
+
 
 == Screenshots ==
 
@@ -148,26 +192,38 @@ Weglot Translate is easy to set up:
 3. Weglot Translate dashboard, translation edition
 4. Weglot Translate visual editor
 
+
 == Upgrade Notice ==
+
 See changelog for upgrade changes.
+
 
 == Changelog ==
 
+= 3.1.3 (29/10/2019) =
+* Improve compatibility: Woocommerce with IE 11
+* Improve compatibility: Contact Form 7
+* Improve compatibility: MailOptin
+* Improve compatibility: The Event Calendar
+* Improve compatibility: Font Awesome
+* Add default exclude block: address
+* Bugfix: Do not cache page if API answers error
+
 = 3.1.2 (24/09/2019) =
-- Bugfix: Custom URL with GET parameters
-- Bugfix: Ninja Forms JSON translate
-- Bugfix: Prevent errors due to call protected method
+* Bugfix: Custom URL with GET parameters
+* Bugfix: Ninja Forms JSON translate
+* Bugfix: Prevent errors due to call protected method
 
 = 3.1.1 (11/09/2019) =
-- Add: IE 11 compatibility with languages switcher
-- Add: WP-CLI compatibility
-- Bugfix: admin api call
-- Bugfix: double language when WC + multisite with subdomains
-- Bugfix: do not add language on external links also in JSON
+* Add: IE 11 compatibility with languages switcher
+* Add: WP-CLI compatibility
+* Bugfix: admin api call
+* Bugfix: double language when WC + multisite with subdomains
+* Bugfix: do not add language on external links also in JSON
 
 = 3.1.0 (29/08/2019) =
-- Add: Better JSON compatiblity
-- Bugfix: WC password reset mechanism
+* Add: Better JSON compatiblity
+* Bugfix: WC password reset mechanism
 
 = 3.0.6 (28/05/2019) =
 * Add: Compatibility with WP Forms

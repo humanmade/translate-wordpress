@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Ninja_Form_Json_Fields
 {
-    const REGEX = '#form.fields=(.*?);#';
+    const REGEX = '#form.fields=(.*?);nfForms#';
 
     const TYPE = SourceType::SOURCE_JSON;
 

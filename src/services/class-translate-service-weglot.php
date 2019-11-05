@@ -110,6 +110,8 @@ class Translate_Service_Weglot {
 			}
 		} catch ( ApiError $e ) {
 			if ( 'json' !== $type ) {
+                define( 'DONOTCACHEPAGE', 1 );
+                nocache_headers();
 				$content .= '<!--Weglot error API : ' . $this->remove_comments( $e->getMessage() ) . '-->';
 			}
 			if ( strpos( $e->getMessage(), 'NMC' ) !== false ) {
@@ -118,6 +120,8 @@ class Translate_Service_Weglot {
 			return $content;
 		} catch ( \Exception $e ) {
 			if ( 'json' !== $type ) {
+                define( 'DONOTCACHEPAGE', 1 );
+                nocache_headers();
 				$content .= '<!--Weglot error : ' . $this->remove_comments( $e->getMessage() ) . '-->';
 			}
 			return $content;

@@ -56,21 +56,25 @@ class WC_Cart_Reload_Weglot implements Hooks_Interface_Weglot {
 		$click_selector = apply_filters( 'weglot_wc_reload_selector', '.weglot-lang a' );
 		?>
 		<script>
-			document.addEventListener('DOMContentLoaded', function(){
-
-				jQuery( '<?php echo esc_attr( $click_selector ); ?>' ).on('click', function(e) {
+            document.addEventListener('DOMContentLoaded', function () {
+				if (!String.prototype.startsWith) {
+					String.prototype.startsWith = function (searchString, position) {
+						position = position || 0;
+						return this.substr(position, searchString.length) === searchString;
+					};
+				}
+				jQuery('<?php echo esc_attr( $click_selector ); ?>').on('click', function (e) {
 					e.preventDefault();
-					var href = jQuery(this).attr('href')
-
-                    Object.keys(window.sessionStorage).forEach(function(element) {
-                        if(element.startsWith("wc_cart_hash_") || element.startsWith("wc_fragments_")) {
-                            window.sessionStorage.removeItem(element);
-                        }
-                    });
-					window.location.href = href
+					var href = jQuery(this).attr('href');
+					Object.keys(window.sessionStorage).forEach(function (element) {
+						if (element.startsWith('wc_cart_hash_') || element.startsWith('wc_fragments_')) {
+							window.sessionStorage.removeItem(element);
+						}
+					});
+					window.location.replace(href);
 				})
 			})
-		</script>
+        </script>
 		<?php
 	}
 }

@@ -389,7 +389,10 @@ class Option_Service_Weglot {
 		$exclude_blocks[]   = '.mini-cart-counter';
 		$exclude_blocks[]   = '.material-icons';
 		$exclude_blocks[]   = '.fas';
+		$exclude_blocks[]   = '.far';
+		$exclude_blocks[]   = '.fad';
 		$exclude_blocks[]   = '.amount'; //Added to prevent prices to pass
+		$exclude_blocks[]   = 'address';
 
 		return apply_filters( 'weglot_exclude_blocks', $exclude_blocks );
 	}
