@@ -14,7 +14,7 @@ Translate your website into multiple languages without any code. Weglot Translat
 
 Weglot Translate is the best and easiest translation plugin to translate your WordPress website and go multilingual.
 
-Weglot Translate translates all your content into any language and provides     a one-stop dashboard to edit translations or outsource to professional translators, to ensure that your translations are of the highest quality.
+Weglot Translate translates all your content into any language and provides a one-stop dashboard to edit translations or outsource to professional translators, to ensure that your translations are of the highest quality.
 With Weglot Translate, you can translate your site into a multilingual website in minutes without coding anything.
 
 Weglot Translate is SEO compatible. Plus, Weglot Translate follows Google’s best practices for multilingual websites, serving all translated webpages with clean source code. Every translated version of your website will be indexed by Google.
