@@ -68,19 +68,9 @@ class Translate_Service_Weglot {
 	public function weglot_treat_page( $content ) {
 		$this->set_current_language( $this->request_url_services->get_current_language() ); // Need to reset
 
-		$allowed                  = $this->option_services->get_option( 'allowed' );
 		// Choose type translate
 		$type     = ( Helper_Json_Inline_Weglot::is_json( $content ) ) ? 'json' : 'html';
 		$type     = apply_filters( 'weglot_type_treat_page', $type );
-
-		if ( ! $allowed ) {
-			$content = $this->weglot_render_dom( $content );
-			if ( 'json' === $type || wp_doing_ajax() ) {
-				return $content;
-			}
-
-			return $content . '<!--Not allowed-->';
-		}
 
 		$active_translation = apply_filters( 'weglot_active_translation', true );
 
@@ -113,9 +103,6 @@ class Translate_Service_Weglot {
                 define( 'DONOTCACHEPAGE', 1 );
                 nocache_headers();
 				$content .= '<!--Weglot error API : ' . $this->remove_comments( $e->getMessage() ) . '-->';
-			}
-			if ( strpos( $e->getMessage(), 'NMC' ) !== false ) {
-				$this->option_services->set_option_by_key( 'allowed', false );
 			}
 			return $content;
 		} catch ( \Exception $e ) {
