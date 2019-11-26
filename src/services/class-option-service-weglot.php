@@ -384,6 +384,7 @@ class Option_Service_Weglot {
 		$exclude_blocks     = $this->get_option( 'exclude_blocks' );
 		$exclude_blocks[]   = '#wpadminbar';
 		$exclude_blocks[]   = '#query-monitor';
+        $exclude_blocks[]   = '#query-monitor-main';
 		$exclude_blocks[]   = '.menu-item-weglot';
 		$exclude_blocks[]   = '.menu-item-weglot a';
 		$exclude_blocks[]   = '.mini-cart-counter';
