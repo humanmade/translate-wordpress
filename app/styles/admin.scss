@@ -1,96 +1,138 @@
-@import '_colors.scss';
-@import 'selectize.css';
+@import "_colors.scss";
+@import "selectize.css";
 
-.weglot__choice__language{
-	border-bottom:1px solid #eee;
-	margin:5px 0px;
-	&--local{
-		border-width:50px;
+$wp-color-red: #dc3232; // RGB(220,50,50)
+$wp-color-green: #46b450; // RGB(70, 180, 80)
+
+/*
+INPUT STYLE
+
+INPUT BORDER : border: 1px solid #7e8993;
+
+border: 1px solid #7e8993;
+border-radius: 4px;
+background: #fff;
+color: #555;
+
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea {
+	box-shadow: 0 0 0 transparent;
+	border-radius: 4px;
+	border: 1px solid #7e8993;
+	background-color: #fff;
+	color: #32373c;
+}
+*/
+
+.weglot__choice__language {
+	border-bottom: 1px solid #eee;
+	margin: 5px 0px;
+	&--local {
+		border-width: 50px;
 		color: #a6a6a6;
-		display:block;
+		display: block;
 	}
 }
 
 .weglot_text_error {
-	color:red;
+	color: $wp-color-red;
 }
 
-.weglot_reset{
+.weglot_reset {
 	text-decoration: underline;
 	font-style: italic;
-	&:hover{
+	&:hover {
 		cursor: pointer;
 	}
 }
 
-.weglot_custom_url{
+.weglot_custom_url {
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 10px;
-	a{
+	a {
 		margin: 5px 0px;
 		display: inline-block;
 	}
-	&--text_link{
+	&--text_link {
 		margin-bottom: 4px;
 	}
 }
 
-.btn{
-	background:$primary;
+.btn {
+	background: $primary;
 	display: inline-block;
-    padding: 8px 10px;
-    border-radius: 4px;
-    transition: .2s background linear,.2s color linear,.2s border linear,.2s text-shadow linear;
-    outline: 0;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: none;
+	padding: 8px 10px;
+	border-radius: 4px;
+	transition: 0.2s background linear, 0.2s color linear, 0.2s border linear,
+		0.2s text-shadow linear;
+	outline: 0;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-weight: 700;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: none;
 	white-space: nowrap;
-	color:white;
-	border:1px solid $primary;
-	&.btn-soft{
+	color: white;
+	border: 1px solid $primary;
+	&.btn-soft {
 		background-color: #fff;
-		color:$textColor;
-		border-color:#eaeaea;
-
+		color: $textColor;
+		border-color: #eaeaea;
 	}
-	&.btn-primary{
+	&.btn-primary {
 		&:active,
 		&:focus,
-		&:hover{
+		&:hover {
 			border-color: $primaryHover;
 			background-color: $primaryHover;
 		}
 	}
-
 }
 
-.js-btn-remove{
+.js-btn-remove {
 	border: none;
-    background-color: #ed6657;
-    color: #fff;
-    display: inline-block;
+	background-color: #e35b5b;
+	color: #fff;
+	display: inline-block;
 	width: 32px;
-    height: 32px;
-    position: relative;
-    border-radius: 50%;
-    cursor: pointer;
+	height: 32px;
+	position: relative;
+	border-radius: 50%;
+	cursor: pointer;
 	transform: translateY(-5%);
-	margin-left:10px;
-    transition: opacity 175ms linear;
-    outline: 0;
+	margin-left: 10px;
+	transition: opacity 175ms linear;
+	outline: 0;
+	padding: 0;
+
+	&:hover {
+		background-color: #c62d2d;
+	}
 }
 
-.item-exclude{
+.item-exclude {
 	position: relative;
 	margin-bottom: 10px;
 }
 
-input[type='text'],textarea {
+input[type="text"],
+textarea {
 	&:focus {
 		border-color: $primaryHover;
 		box-shadow: none;
@@ -100,9 +142,8 @@ input[type='text'],textarea {
 ::-webkit-input-placeholder,
 :-moz-placeholder,
 ::-moz-placeholder,
-:-ms-input-placeholder
-{
-	color: #C0C0C0;
+:-ms-input-placeholder {
+	color: #c0c0c0;
 }
 
 .sub-label {
@@ -112,69 +153,95 @@ input[type='text'],textarea {
 }
 
 .weglot-select-original {
-	height : 36px!important;
-	margin : 0;
+	height: 36px !important;
+	margin: 0;
 }
 .original-select,
 #type_flags {
 	padding: 8px;
-	height: 36px!important;
+	height: 36px !important;
 	width: 300px;
 }
 #type_flags {
 	width: 150px;
 }
 
-.selectize-control.multi .selectize-input > div {
-	background-color : #eff0ff;
+.selectize-control.multi .selectize-input {
+
+	border: 1px solid #7e8993;
+	border-radius: 4px;
+
+	&  > div {
+		background-color: #eff0ff;
+	}
 }
 
-input[type="text"], .wg-input-textarea {
-	padding:8px;
+/* TODO CHECK */
+input[type="text"],
+.wg-input-textarea {
+	padding: 0 8px;
 }
-.wg-input-textarea::placeholder{
-	color:#ccc;
+.wg-input-textarea::placeholder {
+	color: #ccc;
 }
 
+#wrap-weglot {
 
-#wrap-weglot{
+	input[type="text"]:not(#destination_language-selectized),
+	input[type="url"] {
+		// border: 1px solid deeppink;
+		padding: 0 8px;
+		height: 36px;
+	}
+
+	select {
+		// border: 1px solid lime;
+		height: 36px;
+		vertical-align: top;
+		border-radius: 4px;
+	}
+
+	input[type="checkbox"] {
+		margin-top: -6px;
+		border: 1px solid deeppink;
+	}
+
 
 	.weglot-nokkey:before {
-		content:'\274C';
-		display:inline-block;
-		color:red;
-		padding:0 6px 0 0;
+		content: "\274C";
+		display: inline-block;
+		color: $wp-color-red;
+		padding: 0 6px 0 0;
 		font-size: 15px;
-		padding:0 10px;
+		padding: 0 10px;
 	}
 	.weglot-okkey:before {
-		content: '\2713';
+		content: "\2713";
 		display: inline-block;
-		color: green;
+		color: $wp-color-green;
 		padding: 0 10px;
 		font-size: 20px;
 		font-weight: bold;
-		padding:0 10px;
+		padding: 0 10px;
 	}
-	display:flex;
+	display: flex;
 	margin-left: 15px;
 	.wrap {
 		flex: 4;
 	}
-	.weglot-infobox{
-		flex:2;
+	.weglot-infobox {
+		flex: 2;
 		align-self: start;
-		margin:10px 20px 0 2px;
-		background-color: #fff;
+		margin: 10px 20px 0 2px;
 		background-color: white;
-    	border: 1px solid #e0e0e0;
+		border: 1px solid #e0e0e0;
 		border-radius: 12px;
 		overflow: hidden;
 		h3 {
-			color : rgb(24, 22, 76);
-			background-color : white;
+			color: rgb(24, 22, 76);
+			background-color: white;
 			padding: 30px 30px 0 30px;
-			margin : 0px;
+			margin: 0px;
 			font-size: 23px;
 			line-height: 1.3;
 		}
@@ -189,16 +256,16 @@ input[type="text"], .wg-input-textarea {
 			border-radius: 23px;
 			line-height: 45px;
 
-			font-size: 14px!important;
-			text-decoration : none;
-			padding : 0px 30px;
-			display : inline-block;
-			transition:all .2s ease-in;
+			font-size: 14px !important;
+			text-decoration: none;
+			padding: 0px 30px;
+			display: inline-block;
+			transition: all 0.2s ease-in;
 			&:hover {
-				color : white;
+				color: white;
 				background: rgb(37, 46, 215);
 			}
-			p  {
+			p {
 				font-size: 15px;
 			}
 		}
@@ -207,24 +274,24 @@ input[type="text"], .wg-input-textarea {
 	.selectize-control,
 	input[type="text"],
 	.wg-input-textarea,
-	.weglot-select-original{
-		width : 100%;
+	.weglot-select-original {
+		width: 100%;
 		max-width: 300px;
 	}
 
 	#submit {
 		height: 50px;
-		padding: 0 30px!important;
+		padding: 0 30px !important;
 		font-size: 16px;
 	}
 
 	.description {
-		display: inline-block;
+		display: inline;
 	}
 
 	.wg-tooltip {
-		position : absolute;
-		display:none;
+		position: absolute;
+		display: none;
 	}
 
 	#mainform {
@@ -242,18 +309,16 @@ input[type="text"], .wg-input-textarea {
 	}
 
 	.question-icon {
-		font-size : 17px;
+		font-size: 17px;
 	}
 
 	.form-table {
 		margin-bottom: 50px;
 	}
 	.country-selector {
-		z-index: 1!important;
+		z-index: 1 !important;
 	}
-
 }
-
 
 .weglot-info {
 	position: relative;
@@ -265,7 +330,7 @@ input[type="text"], .wg-input-textarea {
 			line-height: 1.4;
 			position: absolute;
 			top: 27px;
-			display: block!important;
+			display: block !important;
 			background-color: #24292d;
 			width: 160px;
 			padding: 10px;
@@ -277,67 +342,66 @@ input[type="text"], .wg-input-textarea {
 	}
 }
 
-.weglot-box-overlay{
+.weglot-box-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
 	display: flex;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.85);
+	background-color: rgba(0, 0, 0, 0.85);
 	z-index: 9999;
 	justify-content: center;
-    align-items: center;
-	.weglot-box{
+	align-items: center;
+	.weglot-box {
 		background-color: #fff;
 		padding: 25px;
-		text-align:center;
-		-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-		-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-		&--title{
+		text-align: center;
+		-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+		&--title {
 			font-size: 24px;
 			line-height: 1.3;
 		}
-		&--text{
+		&--text {
 			font-size: 18px;
 		}
-		&--subtext{
+		&--subtext {
 			font-size: 12px;
 			font-style: italic;
 		}
 	}
-	.weglot-btn-close{
-		float:right;
+	.weglot-btn-close {
+		float: right;
 		cursor: pointer;
 	}
 }
-
 
 .flag-style-openclose {
 	display: inline-block;
 	font-size: 12px;
-	color: #51C7A7;
 	text-decoration: underline;
 	cursor: default;
-	margin-right: 20px;
-	&:hover{
-		opacity : 0.6;
+	margin: 12px 15px 0 10px;
+	color: $wp-color-green;
+	&:hover {
+		/* opacity: 0.6; */
+		color: #399648;
 		cursor: pointer;
 	}
 }
 
-.flag-style-wrapper  {
-	padding : 15px 0px;
+.flag-style-wrapper {
+	padding: 15px 0px;
 	p {
-		font-size : 12px!important;
+		font-size: 12px !important;
 	}
 	select {
-		padding : 3px!important;
-		font-size : 12px;
+		padding: 3px !important;
+		font-size: 12px;
 	}
 }
-
 
 #private_mode {
 	+ p + div {
@@ -350,16 +414,17 @@ input[type="text"], .wg-input-textarea {
 
 #private-mode-detail {
 	margin-top: 20px;
-	.private-mode-detail-lang{
-		display:flex;
-		align-items:center;
+	.private-mode-detail-lang {
+		display: flex;
+		align-items: center;
 		margin-top: 15px;
 		margin-bottom: 15px;
 		margin-left: 15px;
-		input,label{
+		input,
+		label {
 			line-height: 1.3;
 		}
-		input{
+		input {
 			margin-right: 15px;
 		}
 	}
