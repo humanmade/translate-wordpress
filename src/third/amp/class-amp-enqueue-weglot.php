@@ -42,7 +42,8 @@ class Amp_Enqueue_Weglot implements Hooks_Interface_Weglot {
 	 * @return void
 	 */
 	public function weglot_amp_post_template_css() {
-		echo file_get_contents( WEGLOT_DIR_DIST . '/css/front-amp-css.css' ); //phpcs:ignore
-		echo $this->option_services->get_flag_css(); //phpcs:ignore
+		$css = file_get_contents( WEGLOT_DIR_DIST . '/css/front-amp-css.css' ); //phpcs:ignore
+		$css = str_replace( '../images/', plugins_url( WEGLOT_NAME ) . '/dist/images/', $css );
+		echo $css . $this->option_services->get_flag_css(); //phpcs:ignore
 	}
 }
