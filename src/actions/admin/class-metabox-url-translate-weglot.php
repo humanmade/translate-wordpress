@@ -33,7 +33,7 @@ class Metabox_Url_Translate_Weglot implements Hooks_Interface_Weglot {
 	 */
 	public function hooks() {
 		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes_url_translate' ] );
-		add_action( 'save_post', [ $this, 'save_post_meta_boxes_url_translate' ] );
+		add_action( 'save_post', [ $this, 'save_post_meta_boxes_url_translate' ], 10, 3 );
 		add_action( 'wp_ajax_weglot_post_name', [ $this, 'weglot_post_name' ] );
 		add_action( 'wp_ajax_weglot_reset_custom_url', [ $this, 'weglot_reset_custom_url' ] );
 
@@ -246,7 +246,7 @@ class Metabox_Url_Translate_Weglot implements Hooks_Interface_Weglot {
 	 * @return array
 	 */
 	public function weglot_wp_insert_post_data( $data, $postarr ) {
-		$post                = get_post( $postarr['ID'] );
+		$post = get_post( $postarr['ID'] );
 		if ( $post ) {
 			$this->old_post_name = $post->post_name;
 			$this->new_post_name = $data['post_name'];
@@ -260,7 +260,7 @@ class Metabox_Url_Translate_Weglot implements Hooks_Interface_Weglot {
 	 * @param mixed $post_id
 	 * @return void
 	 */
-	public function save_post_meta_boxes_url_translate( $post_id ) {
+	public function save_post_meta_boxes_url_translate( $post_id, $post, $update ) {
 
 		// Add nonce for security and authentication.
 		$post_name_weglot   = isset( $_POST[ Helper_Post_Meta_Weglot::POST_NAME_WEGLOT ] ) ? $_POST[ Helper_Post_Meta_Weglot::POST_NAME_WEGLOT ] : []; //phpcs:ignore
@@ -280,7 +280,7 @@ class Metabox_Url_Translate_Weglot implements Hooks_Interface_Weglot {
 		}
 
 		// Check if not a revision.
-		if ( wp_is_post_revision( $post_id ) ) {
+		if ( wp_is_post_revision( $post_id ) || $update ) {
 			return;
 		}
 
