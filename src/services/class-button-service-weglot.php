@@ -115,7 +115,7 @@ class Button_Service_Weglot {
 			$name                   = $this->get_name_with_language_entry( $current_language_entry );
 
 			$uniq_id = 'wg' . uniqid( strtotime( 'now' ) ) . rand( 1, 1000 );
-			$button_html .= sprintf( '<input id="%s" class="weglot_choice" type="checkbox" name="menu"/><label for="%s" class="wgcurrent wg-li weglot-lang weglot-language %s" data-code-language="%s"><span>%s</span></label>', $uniq_id, $uniq_id, $flag_class . $current_language, $current_language_entry->getIso639(), $name );
+			$button_html .= sprintf( '<input id="%s" class="weglot_choice" type="checkbox" name="menu"/><label for="%s" class="wgcurrent wg-li weglot-lang weglot-language %s" data-code-language="%s"><span>%s</span></label>', esc_attr($uniq_id), esc_attr($uniq_id), esc_attr($flag_class . $current_language), esc_attr($current_language_entry->getIso639()), esc_html($name) );
 
 			$button_html .= '<ul>';
 
@@ -135,8 +135,8 @@ class Button_Service_Weglot {
 
 				$button_html .= sprintf(
 					'<a data-wg-notranslate href="%s">%s</a>',
-					$link_button,
-					$name
+					esc_url($link_button),
+					esc_html($name)
 				);
 
 				$button_html .= '</li>';
