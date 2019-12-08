@@ -71,6 +71,7 @@ abstract class Context_Weglot {
 			'\WeglotWP\Third\MailOptin\Mailoptin_Active',
 			'\WeglotWP\Third\ContactForm7\Contactform7_Active',
 			'\WeglotWP\Third\WpOptimize\Wp_Optimize_Active',
+			'\WeglotWP\Third\CacheEnabler\Cache_Enabler_Active',
         ];
 
         self::$context->set_services( $services );
@@ -108,6 +109,7 @@ abstract class Context_Weglot {
 			'\WeglotWP\Third\TheEventsCalendar\Theeventscalendar_Words',
             '\WeglotWP\Third\Contactform7\Contactform7_Json_Keys',
 			'\WeglotWP\Third\WpOptimize\Wp_Optimize_Cache',
+			'\WeglotWP\Third\CacheEnabler\Cache_Enabler_Cache',
         ];
 
 		self::$context->set_actions( $actions );

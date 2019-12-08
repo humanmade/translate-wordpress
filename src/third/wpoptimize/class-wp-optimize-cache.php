@@ -10,7 +10,7 @@ use WeglotWP\Helpers\Helper_Is_Admin;
 use WeglotWP\Models\Hooks_Interface_Weglot;
 
 /**
- * WpOptimize_Cache
+ * Wp_Optimize_Cache
  *
  * @since 3.1.4
  */
