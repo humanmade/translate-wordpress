@@ -12,12 +12,12 @@ use WeglotWP\Models\Hooks_Interface_Weglot;
 /**
  * WpOptimize_Cache
  *
- * @since 3.1.3
+ * @since 3.1.4
  */
 class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 
 	/**
-	 * @since 3.1.3
+	 * @since 3.1.4
 	 * @return void
 	 */
 	public function __construct() {
@@ -25,7 +25,7 @@ class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 	}
 
 	/**
-	 * @since 3.1.3
+	 * @since 3.1.4
 	 * @see Hooks_Interface_Weglot
 	 * @return void
 	 */
@@ -40,7 +40,7 @@ class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 	}
 
 	/**
-	 * @since 3.1.3
+	 * @since 3.1.4
 	 * @return void
 	 */
 	public function weglot_wpo_donotcachepage( $can_cache_page ) {
@@ -58,7 +58,7 @@ class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 
 
 	/**
-	 * @since 3.1.3
+	 * @since 3.1.4
 	 * @return void
 	 */
 	public function weglot_wpo_can_cache_page( $can_cache_page ) {
