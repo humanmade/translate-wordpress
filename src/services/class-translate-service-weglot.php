@@ -84,7 +84,7 @@ class Translate_Service_Weglot {
 		try {
 			switch ( $type ) {
 				case 'json':
-                    $extraKeys = apply_filters( 'weglot_add_json_keys' , array() );
+					$extraKeys = apply_filters( 'weglot_add_json_keys' , array() );
                     $translated_content = $parser->translate( $content, $this->original_language, $this->current_language, $extraKeys );
                     $translated_content = json_encode($this->replace_url_services->replace_link_in_json( json_decode($translated_content , true) ));
                     $translated_content    = apply_filters( 'weglot_json_treat_page', $translated_content );
@@ -100,14 +100,18 @@ class Translate_Service_Weglot {
 			}
 		} catch ( ApiError $e ) {
 			if ( 'json' !== $type ) {
-                define( 'DONOTCACHEPAGE', 1 );
+				if ( ! defined('DONOTCACHEPAGE') ) {
+					define( 'DONOTCACHEPAGE', 1 );
+				}
                 nocache_headers();
 				$content .= '<!--Weglot error API : ' . $this->remove_comments( $e->getMessage() ) . '-->';
 			}
 			return $content;
 		} catch ( \Exception $e ) {
 			if ( 'json' !== $type ) {
-                define( 'DONOTCACHEPAGE', 1 );
+                if ( ! defined('DONOTCACHEPAGE') ) {
+					define( 'DONOTCACHEPAGE', 1 );
+				}
                 nocache_headers();
 				$content .= '<!--Weglot error : ' . $this->remove_comments( $e->getMessage() ) . '-->';
 			}
