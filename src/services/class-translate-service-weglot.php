@@ -21,12 +21,12 @@ class Translate_Service_Weglot {
 	 * @since 2.3.0
 	 */
 	public function __construct() {
-		$this->option_services                  = weglot_get_service( 'Option_Service_Weglot' );
-		$this->request_url_services             = weglot_get_service( 'Request_Url_Service_Weglot' );
-		$this->replace_url_services             = weglot_get_service( 'Replace_Url_Service_Weglot' );
-		$this->replace_link_services            = weglot_get_service( 'Replace_Link_Service_Weglot' );
-		$this->parser_services                  = weglot_get_service( 'Parser_Service_Weglot' );
-		$this->generate_switcher_service        = weglot_get_service( 'Generate_Switcher_Service_Weglot' );
+		$this->option_services           = weglot_get_service( 'Option_Service_Weglot' );
+		$this->request_url_services      = weglot_get_service( 'Request_Url_Service_Weglot' );
+		$this->replace_url_services      = weglot_get_service( 'Replace_Url_Service_Weglot' );
+		$this->replace_link_services     = weglot_get_service( 'Replace_Link_Service_Weglot' );
+		$this->parser_services           = weglot_get_service( 'Parser_Service_Weglot' );
+		$this->generate_switcher_service = weglot_get_service( 'Generate_Switcher_Service_Weglot' );
 	}
 
 
@@ -69,8 +69,8 @@ class Translate_Service_Weglot {
 		$this->set_current_language( $this->request_url_services->get_current_language() ); // Need to reset
 
 		// Choose type translate
-		$type     = ( Helper_Json_Inline_Weglot::is_json( $content ) ) ? 'json' : 'html';
-		$type     = apply_filters( 'weglot_type_treat_page', $type );
+		$type = ( Helper_Json_Inline_Weglot::is_json( $content ) ) ? 'json' : 'html';
+		$type = apply_filters( 'weglot_type_treat_page', $type );
 
 		$active_translation = apply_filters( 'weglot_active_translation', true );
 
@@ -84,11 +84,11 @@ class Translate_Service_Weglot {
 		try {
 			switch ( $type ) {
 				case 'json':
-					$extraKeys = apply_filters( 'weglot_add_json_keys' , array() );
-                    $translated_content = $parser->translate( $content, $this->original_language, $this->current_language, $extraKeys );
-                    $translated_content = json_encode($this->replace_url_services->replace_link_in_json( json_decode($translated_content , true) ));
-                    $translated_content    = apply_filters( 'weglot_json_treat_page', $translated_content );
-                    return $translated_content;
+					$extraKeys          = apply_filters( 'weglot_add_json_keys', array() );
+					$translated_content = $parser->translate( $content, $this->original_language, $this->current_language, $extraKeys );
+					$translated_content = json_encode( $this->replace_url_services->replace_link_in_json( json_decode( $translated_content, true ) ) );
+					$translated_content = apply_filters( 'weglot_json_treat_page', $translated_content );
+					return $translated_content;
 				case 'html':
 				    $translated_content = $parser->translate( $content, $this->original_language, $this->current_language ); // phpcs:ignore
 					$translated_content = apply_filters( 'weglot_html_treat_page', $translated_content );
@@ -100,19 +100,19 @@ class Translate_Service_Weglot {
 			}
 		} catch ( ApiError $e ) {
 			if ( 'json' !== $type ) {
-				if ( ! defined('DONOTCACHEPAGE') ) {
+				if ( ! defined( 'DONOTCACHEPAGE' ) ) {
 					define( 'DONOTCACHEPAGE', 1 );
 				}
-                nocache_headers();
+				nocache_headers();
 				$content .= '<!--Weglot error API : ' . $this->remove_comments( $e->getMessage() ) . '-->';
 			}
 			return $content;
 		} catch ( \Exception $e ) {
 			if ( 'json' !== $type ) {
-                if ( ! defined('DONOTCACHEPAGE') ) {
+				if ( ! defined( 'DONOTCACHEPAGE' ) ) {
 					define( 'DONOTCACHEPAGE', 1 );
 				}
-                nocache_headers();
+				nocache_headers();
 				$content .= '<!--Weglot error : ' . $this->remove_comments( $e->getMessage() ) . '-->';
 			}
 			return $content;
