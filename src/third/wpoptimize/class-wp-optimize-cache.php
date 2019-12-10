@@ -36,24 +36,6 @@ class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 		}
 
 		add_filter( 'wpo_can_cache_page', [ $this, 'weglot_wpo_can_cache_page' ] );
-		// add_action( 'init', [ $this, 'weglot_wpo_donotcachepage' ] );
-	}
-
-	/**
-	 * @since 3.1.4
-	 * @return bool
-	 */
-	public function weglot_wpo_donotcachepage( $can_cache_page ) {
-
-		if ( ! function_exists( 'weglot_get_original_language' ) || ! function_exists( 'weglot_get_current_language' ) ) {
-			return $can_cache_page;
-		}
-
-		if ( weglot_get_original_language() !== weglot_get_current_language() && ! defined( 'DONOTCACHEPAGE' ) ) {
-			define( 'DONOTCACHEPAGE', true );
-		}
-
-		return $can_cache_page;
 	}
 
 

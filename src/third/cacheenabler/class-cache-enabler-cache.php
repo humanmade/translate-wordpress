@@ -52,14 +52,7 @@ class Cache_Enabler_Cache implements Hooks_Interface_Weglot {
 
 		$languages = weglot_get_current_and_original_language();
 
-		if ( ( $languages['current'] !== $languages['original'] ) ) {
-			if ( ! defined( 'DONOTCACHEPAGE' ) ) {
-				define( 'DONOTCACHEPAGE', 1 );
-			}
-			return true;
-		}
-
-		return $bypass_cache;
+		return ( $languages['current'] !== $languages['original'] );
 	}
 
 	/**
