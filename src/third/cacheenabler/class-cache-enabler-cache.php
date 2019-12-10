@@ -46,13 +46,11 @@ class Cache_Enabler_Cache implements Hooks_Interface_Weglot {
 	 */
 	public function bypass_cache( $bypass_cache ) {
 
-		if ( $bypass_cache || ! function_exists( 'weglot_get_current_and_original_language' ) ) {
-			return $bypass_cache;
-		}
+        if ( weglot_get_original_language() !== weglot_get_current_language() ) {
+            return true;
+        }
 
-		$languages = weglot_get_current_and_original_language();
-
-		return ( $languages['current'] !== $languages['original'] );
+        return $bypass_cache;
 	}
 
 	/**
