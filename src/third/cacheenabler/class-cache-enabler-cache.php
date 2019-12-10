@@ -46,11 +46,11 @@ class Cache_Enabler_Cache implements Hooks_Interface_Weglot {
 	 */
 	public function bypass_cache( $bypass_cache ) {
 
-        if ( weglot_get_original_language() !== weglot_get_current_language() ) {
-            return true;
-        }
+		if ( weglot_get_original_language() !== weglot_get_current_language() ) {
+			return true;
+		}
 
-        return $bypass_cache;
+		return $bypass_cache;
 	}
 
 	/**
@@ -66,11 +66,6 @@ class Cache_Enabler_Cache implements Hooks_Interface_Weglot {
 	 * @return string
 	 */
 	public function add_default_switcher( $dom ) {
-
-		if ( ! function_exists( 'weglot_get_current_and_original_language' ) ) {
-			return;
-		}
-
 		return $this->generate_switcher_service->generate_switcher_from_dom( $dom );
 	}
 
