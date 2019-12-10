@@ -402,7 +402,7 @@ class Option_Service_Weglot {
 		$exclude_blocks[]   = '#query-monitor';
         $exclude_blocks[]   = '#query-monitor-main';
 
-		// Plugin Whoocommerce
+		// Plugin Woocommerce
 		$exclude_blocks[]   = '.mini-cart-counter';
 		$exclude_blocks[]   = '.amount'; //Added to prevent prices to pass
 		$exclude_blocks[]   = 'address';
