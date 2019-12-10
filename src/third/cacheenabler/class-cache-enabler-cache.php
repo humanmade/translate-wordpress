@@ -21,8 +21,8 @@ class Cache_Enabler_Cache implements Hooks_Interface_Weglot {
 	 * @return void
 	 */
 	public function __construct() {
-		$this->cache_enabler_active = weglot_get_service( 'Cache_Enabler_Active' );
-        $this->generate_switcher_service = weglot_get_service( 'Generate_Switcher_Service_Weglot' );
+		$this->cache_enabler_active      = weglot_get_service( 'Cache_Enabler_Active' );
+		$this->generate_switcher_service = weglot_get_service( 'Generate_Switcher_Service_Weglot' );
 	}
 
 	/**
@@ -37,39 +37,43 @@ class Cache_Enabler_Cache implements Hooks_Interface_Weglot {
 		}
 
 		add_filter( 'bypass_cache', [ $this, 'bypass_cache' ] );
-
-        add_action('wp_head', [ $this,  'buffer_start']);
+		add_action( 'wp_head', [ $this, 'buffer_start' ] );
 	}
 
 	/**
 	 * @since 3.1.4
-	 * @return void
+	 * @return bool
 	 */
 	public function bypass_cache( $bypass_cache ) {
 
-		if ($bypass_cache || ! function_exists( 'weglot_get_current_and_original_language' ) ) {
+		if ( $bypass_cache || ! function_exists( 'weglot_get_current_and_original_language' ) ) {
 			return $bypass_cache;
 		}
-
 
 		$languages = weglot_get_current_and_original_language();
 
 		return ( $languages['current'] !== $languages['original'] );
 	}
 
-    public function buffer_start() { ob_start( [ $this, "add_default_switcher"]); }
-
-    /**
+	/**
 	 * @since 3.1.4
 	 * @return void
 	 */
-	public function add_default_switcher($dom) {
+	public function buffer_start() {
+		ob_start( [ $this, 'add_default_switcher' ] );
+	}
+
+	/**
+	 * @since 3.1.4
+	 * @return string
+	 */
+	public function add_default_switcher( $dom ) {
 
 		if ( ! function_exists( 'weglot_get_current_and_original_language' ) ) {
 			return;
 		}
 
-        return $this->generate_switcher_service->generate_switcher_from_dom( $dom );
+		return $this->generate_switcher_service->generate_switcher_from_dom( $dom );
 	}
 
 }
