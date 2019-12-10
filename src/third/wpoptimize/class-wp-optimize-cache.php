@@ -41,7 +41,7 @@ class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 
 	/**
 	 * @since 3.1.4
-	 * @return void
+	 * @return bool
 	 */
 	public function weglot_wpo_donotcachepage( $can_cache_page ) {
 
@@ -59,7 +59,7 @@ class Wp_Optimize_Cache implements Hooks_Interface_Weglot {
 
 	/**
 	 * @since 3.1.4
-	 * @return void
+	 * @return bool
 	 */
 	public function weglot_wpo_can_cache_page( $can_cache_page ) {
 
