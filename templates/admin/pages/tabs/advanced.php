@@ -116,7 +116,7 @@ $languages = array_values( $languages );
 				endif;
 				?>
 			</div>
-			<button id="js-add-exclude-url" class="btn btn-soft"><?php esc_html_e( 'Add an URL to exclude', 'weglot' ); ?></button>
+			<button id="js-add-exclude-url" class="btn btn-soft"><span class="dashicons dashicons-plus-alt"></span> <?php esc_html_e( 'Add an URL to exclude', 'weglot' ); ?></button>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -148,7 +148,7 @@ $languages = array_values( $languages );
 				endif;
 				?>
 			</div>
-			<button id="js-add-exclude-block" class="btn btn-soft"><?php esc_html_e( 'Add a block to exclude', 'weglot' ); ?></button>
+			<button id="js-add-exclude-block" class="btn btn-soft"><span class="dashicons dashicons-plus-alt"></span> <?php esc_html_e( 'Add a block to exclude', 'weglot' ); ?></button>
 		</td>
 	</tr>
 	</tbody>

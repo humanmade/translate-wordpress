@@ -66,9 +66,12 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\Woocommerce\Wc_Active',
 			'\WeglotWP\Third\WPForms\Wpforms_Active',
 			'\WeglotWP\Third\UnderConstructionPage\Ucp_Active',
+			'\WeglotWP\Third\Maintenance\Maintenance_Active',
 			'\WeglotWP\Third\TheEventsCalendar\Theeventscalendar_Active',
 			'\WeglotWP\Third\MailOptin\Mailoptin_Active',
 			'\WeglotWP\Third\ContactForm7\Contactform7_Active',
+			'\WeglotWP\Third\WpOptimize\Wp_Optimize_Active',
+			'\WeglotWP\Third\CacheEnabler\Cache_Enabler_Active',
         ];
 
         self::$context->set_services( $services );
@@ -102,8 +105,11 @@ abstract class Context_Weglot {
             '\WeglotWP\Third\Woocommerce\WC_Filter_Urls_Weglot',
             '\WeglotWP\Third\Woocommerce\WC_Cart_Reload_Weglot',
 			'\WeglotWP\Third\UnderConstructionPage\Ucp_Tracking',
+			'\WeglotWP\Third\Maintenance\Maintenance_Tracking',
 			'\WeglotWP\Third\TheEventsCalendar\Theeventscalendar_Words',
             '\WeglotWP\Third\Contactform7\Contactform7_Json_Keys',
+			'\WeglotWP\Third\WpOptimize\Wp_Optimize_Cache',
+			'\WeglotWP\Third\CacheEnabler\Cache_Enabler_Cache',
         ];
 
 		self::$context->set_actions( $actions );

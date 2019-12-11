@@ -4,7 +4,7 @@ Tags: translate, multilingual, language, translation, localization
 Requires at least: 4.5
 Tested up to: 5.3
 Requires PHP: 5.4
-Stable tag: 3.1.3
+Stable tag: 3.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -200,6 +200,16 @@ See changelog for upgrade changes.
 
 
 == Changelog ==
+
+= 3.1.4 (12/12/2019) =
+* Update back office style for WordPress 5.3
+* Fix: Flags SRC attribute with AMP
+* Fix: Custom URL feature - Revisions
+* Improve compatibility: WP Optimize
+* Improve compatibility: Cache Enabler
+* Add default exclude block for SecuPress plugin and SQLI protect
+* Add default exclude block for plugin query monitor > 3.3.0
+* Remove the "Not allowed" mechanism.
 
 = 3.1.3 (29/10/2019) =
 * Improve compatibility: Woocommerce with IE 11

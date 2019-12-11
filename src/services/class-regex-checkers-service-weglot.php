@@ -35,7 +35,7 @@ class Regex_Checkers_Service_Weglot {
 
         $other_words = apply_filters( 'weglot_words_translate', [] );
         foreach ($other_words as $other_word) {
-          array_push($checkers, new RegexChecker( '#\b' . $other_word . '\b#' , SourceType::SOURCE_TEXT , 0));
+          array_push($checkers, new RegexChecker( '#\b' . $other_word . '\b#u' , SourceType::SOURCE_TEXT , 0));
         }
 
 

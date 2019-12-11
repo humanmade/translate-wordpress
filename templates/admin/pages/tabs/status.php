@@ -132,7 +132,21 @@ $options = weglot_get_options();
 				</tr>
 				<tr>
 					 <td><?php esc_html_e( 'Exclude URLs', 'weglot' ); ?></td>
-					 <td><?php echo esc_attr( implode( $options[ 'exclude_urls' ], ' - ' ) ); ?></td>
+					 <td>
+						<?php if ( ! empty($options[ 'exclude_urls' ] ) ):
+							foreach ( $options[ 'exclude_urls' ] as $type => $exclude_url ) :
+								if ( empty( $exclude_url['type'] ) || empty( $exclude_url['value'] ) ) {
+									continue;
+								}
+
+								echo esc_html( $exclude_url['type'] . ' - ' . $exclude_url['value'] ) . '<br/>';
+
+							endforeach;
+						else:
+							esc_html_e( 'Empty', 'weglot' );
+						endif; ?>
+					</td>
+
 				</tr>
 				<tr>
 					 <td><?php esc_html_e( 'Exclude Blocks', 'weglot' ); ?></td>
@@ -142,7 +156,7 @@ $options = weglot_get_options();
 	 </table>
 	 <br />
 	<div class="widefat">
-		<h2><?php esc_html_e( 'Custom URLS', 'weglot'); ?></h2>
-		<?php var_export($options['custom_urls']); ?>
+		<h2><?php esc_html_e( 'Custom URLS', 'weglot' ); ?></h2>
+		<pre><?php var_export( $options['custom_urls'] ); ?></pre>
 	</div>
 </div>

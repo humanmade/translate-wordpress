@@ -382,17 +382,33 @@ class Option_Service_Weglot {
 	 */
 	public function get_exclude_blocks() {
 		$exclude_blocks     = $this->get_option( 'exclude_blocks' );
+
+		// WordPress
 		$exclude_blocks[]   = '#wpadminbar';
-		$exclude_blocks[]   = '#query-monitor';
+
+		// Weglot Switcher
 		$exclude_blocks[]   = '.menu-item-weglot';
 		$exclude_blocks[]   = '.menu-item-weglot a';
-		$exclude_blocks[]   = '.mini-cart-counter';
+
+		// Material Icons
 		$exclude_blocks[]   = '.material-icons';
+
+		// Font Awesome
 		$exclude_blocks[]   = '.fas';
 		$exclude_blocks[]   = '.far';
 		$exclude_blocks[]   = '.fad';
+
+		// Plugin Query Monitor
+		$exclude_blocks[]   = '#query-monitor';
+        $exclude_blocks[]   = '#query-monitor-main';
+
+		// Plugin Woocommerce
+		$exclude_blocks[]   = '.mini-cart-counter';
 		$exclude_blocks[]   = '.amount'; //Added to prevent prices to pass
 		$exclude_blocks[]   = 'address';
+
+		// Plugin SecuPress
+		$exclude_blocks[]   = '#secupress-donttranslate';
 
 		return apply_filters( 'weglot_exclude_blocks', $exclude_blocks );
 	}

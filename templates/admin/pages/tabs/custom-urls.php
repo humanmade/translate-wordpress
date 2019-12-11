@@ -37,15 +37,12 @@ use Weglot\WeglotContext;
 			<div style="flex:5;">
 				<input style="max-width:100%;"  type="text" value="<?php echo $key; ?>" data-key="<?php echo $keyGenerate; ?>" class="custom-url custom-<?php echo $keyGenerate; ?>" data-lang="<?php echo $lang; ?>" />
 			</div>
-
-			<div style="align-self:flex-end; flex:1">
+			<div style="align-self:flex-end; flex:1; text-align: center; height: 32px;">
 				<button class="js-btn-remove" data-key="<?php echo $keyGenerate; ?>">
 					<span class="dashicons dashicons-minus"></span>
 				</button>
 			</div>
-
 		</div>
-
 		<?php
 	} ?>
 
