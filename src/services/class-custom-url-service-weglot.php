@@ -17,8 +17,8 @@ class Custom_Url_Service_Weglot {
 	 * @since 2.3.0
 	 */
 	public function __construct() {
-		$this->option_services           = weglot_get_service( 'Option_Service_Weglot' );
-		$this->request_url_services      = weglot_get_service( 'Request_Url_Service_Weglot' );
+		$this->option_services      = weglot_get_service( 'Option_Service_Weglot' );
+		$this->request_url_services = weglot_get_service( 'Request_Url_Service_Weglot' );
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Custom_Url_Service_Weglot {
 	 */
 	public function get_link( $key_code, $add_no_redirect = true ) {
 
-		if( apply_filters( 'weglot_need_reset_postdata', false ) ) {
+		if ( apply_filters( 'weglot_need_reset_postdata', false ) ) {
 			wp_reset_postdata();
 		}
 
@@ -43,28 +43,50 @@ class Custom_Url_Service_Weglot {
 		$condition_test_custom_url = isset( $request_without_language[ $index_entries ] ) && ! is_admin() && ! empty( $custom_urls ) && ! is_post_type_archive() && ! is_category() && ! is_tax() && ! is_archive() && ! is_front_page() && ! is_home();
 
 		if ( apply_filters( 'weglot_condition_test_custom_url', $condition_test_custom_url, $url_lang, $key_code ) ) {
-			$slug_in_work             = $request_without_language[ $index_entries ];
-            $original_slug_in_work         = $slug_in_work;
 
-            if($current_language !== $original_language) {
-                if ( isset( $custom_urls[ $current_language ] )) {
-                    $value_slug = array_key_exists($slug_in_work, $custom_urls[$current_language]) ? $custom_urls[$current_language][$slug_in_work] : false;
-                    if ( false !== $value_slug ) {
-                        $original_slug_in_work = $value_slug;
-                    }
-                }
+			if ( apply_filters( 'weglot_beta_custom_url', false ) ) {
+
+				$original_slug_in_work = $request_without_language[ $index_entries ];
+
+				if (
+					$current_language !== $original_language
+					&& isset( $custom_urls[ $current_language ] )
+				) {
+					foreach ( $custom_urls[ $current_language ] as $key => $value ) {
+						$original_slug_in_work = str_replace( '/' . $value . '/', '/' . $key . '/', $original_slug_in_work );
+					}
+				}
+
+				if ( isset( $custom_urls[ $key_code ] ) ) {
+					foreach ( $custom_urls[ $key_code ] as $key => $value ) {
+						$url_lang = str_replace( '/' . $value . '/', '/' . $key . '/', $url_lang );
+					}
+				} elseif ( isset( $custom_urls[ $current_language ] ) ) {
+					foreach ( $custom_urls[ $current_language ] as $key => $value ) {
+						$url_lang = str_replace( '/' . $key . '/', '/' . $value . '/', $url_lang );
+					}
+				}
+			} else {
+
+				$slug_in_work          = $request_without_language[ $index_entries ];
+				$original_slug_in_work = $slug_in_work;
+				if ( $current_language !== $original_language ) {
+					if ( isset( $custom_urls[ $current_language ] ) ) {
+						$value_slug = array_key_exists( $slug_in_work, $custom_urls[ $current_language ] ) ? $custom_urls[ $current_language ][ $slug_in_work ] : false;
+						if ( false !== $value_slug ) {
+							$original_slug_in_work = $value_slug;
+						}
+					}
+				}
+				if ( isset( $custom_urls[ $key_code ] ) ) {
+					$key_slug = array_search( $original_slug_in_work, $custom_urls[ $key_code ] ); //phpcs:ignore
+					if ( false !== $key_slug ) {
+						$url_lang = str_replace( $slug_in_work, $key_slug, $url_lang );
+					}
+				} else {
+					$url_lang = str_replace( $slug_in_work, $original_slug_in_work, $url_lang );
+				}
 			}
-
-            if ( isset( $custom_urls[ $key_code ] )) {
-                $key_slug = array_search( $original_slug_in_work, $custom_urls[ $key_code ] ); //phpcs:ignore
-                if ( false !== $key_slug ) {
-                    $url_lang = str_replace($slug_in_work, $key_slug, $url_lang);
-                }
-            }
-            else {
-
-                $url_lang = str_replace( $slug_in_work, $original_slug_in_work, $url_lang );
-            }
 		}
 
 		$link_button = apply_filters( 'weglot_link_language', $url_lang, $key_code );

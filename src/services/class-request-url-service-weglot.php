@@ -237,9 +237,19 @@ class Request_Url_Service_Weglot {
 		$current_language      = $this->get_current_language();
 
 		$url_path_custom = null;
-		if ( ! empty( $custom_urls ) && isset( $custom_urls[ $current_language ] ) && isset( $path_without_language[ $index_entries ] ) && isset( $custom_urls[ $current_language ][ $path_without_language[ $index_entries ] ] ) ) {
-			$url_path_custom = get_site_url() . '/' . $custom_urls[ $current_language ][ $path_without_language[ $index_entries ] ] . '/';
+
+		if ( apply_filters( 'weglot_beta_custom_url', false ) ) {
+			if (isset($custom_urls[ $current_language ])) {
+				foreach ($custom_urls[ $current_language ] as $key => $value) {
+					$url_path_custom = str_replace( '/' . $key . '/', '/' . $value . '/', $url_relative );
+				}
+			}
+		} else {
+			if ( ! empty( $custom_urls ) && isset( $custom_urls[ $current_language ] ) && isset( $path_without_language[ $index_entries ] ) && isset( $custom_urls[ $current_language ][ $path_without_language[ $index_entries ] ] ) ) {
+				$url_path_custom = get_site_url() . '/' . $custom_urls[ $current_language ][ $path_without_language[ $index_entries ] ] . '/';
+			}
 		}
+
 
 		$weglot_url = $this->create_url_object( $url );
 		$weglot_url->setExcludedUrls( $exclude_urls_option );
