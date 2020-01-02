@@ -72,7 +72,7 @@ class Redirect_Service_Weglot {
 		}
 
 		if ( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) { //phpcs:ignore
-			$server_lang           = substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 ); //phpcs:ignore
+			$server_lang           = strtok($_SERVER['HTTP_ACCEPT_LANGUAGE'], ','); //phpcs:ignore
 		} else {
 			if ( isset( $_SERVER['HTTP_CF_IPCOUNTRY'] ) ) { // phpcs:ignore
 				// Compatibility Cloudfare

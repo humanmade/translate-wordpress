@@ -145,8 +145,11 @@ class Front_Menu_Weglot implements Hooks_Interface_Weglot {
 				$language_item->ID         = 'weglot-' . $item->ID . '-' . $language->getIso639();
 				$language_item->title      = $this->button_services->get_name_with_language_entry( $language );
 				$language_item->attr_title = $language->getLocalName();
-				$language_item->url        = $this->custom_url_services->get_link_button_with_key_code( $language->getIso639() );
-				;
+
+				$language_code_rewrited = apply_filters('weglot_language_code_replace' , array());
+				$l = isset($language_code_rewrited[$language->getIso639()]) ? $language_code_rewrited[$language->getIso639()]:$language->getIso639();
+				$language_item->url        = $this->custom_url_services->get_link_button_with_key_code( $l );
+
 				$language_item->lang       = $language->getIso639();
 				$language_item->classes    = array_merge( $classes, $add_classes );
 				$language_item->menu_order += $offset + $i++;

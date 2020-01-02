@@ -67,9 +67,12 @@ class Search_Weglot implements Hooks_Interface_Weglot {
 		}
 
 		try {
+            $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+            $toTranslateLanguageIso = ($key = array_search($current_language,$language_code_rewrited)) ? $key:$current_language;
+
 			$parser           = $this->parser_services->get_parser();
 			$this->old_search = $query->query_vars['s'];
-			$this->new_search = $parser->translate( $query->query_vars[ 's' ], $current_language, $original_language ); //phpcs:ignore
+			$this->new_search = $parser->translate( $query->query_vars[ 's' ], $toTranslateLanguageIso, $original_language ); //phpcs:ignore
 
 			if ( empty( $this->new_search ) ) {
 				return;

@@ -46,17 +46,20 @@ class Custom_Url_Service_Weglot {
 			$slug_in_work             = $request_without_language[ $index_entries ];
             $original_slug_in_work         = $slug_in_work;
 
+            $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
             if($current_language !== $original_language) {
-                if ( isset( $custom_urls[ $current_language ] )) {
-                    $value_slug = array_key_exists($slug_in_work, $custom_urls[$current_language]) ? $custom_urls[$current_language][$slug_in_work] : false;
+                $toTranslateLanguageIso = ($key = array_search($current_language,$language_code_rewrited)) ? $key:$current_language;
+                if ( isset( $custom_urls[ $toTranslateLanguageIso ] )) {
+                    $value_slug = array_key_exists($slug_in_work, $custom_urls[$toTranslateLanguageIso]) ? $custom_urls[$toTranslateLanguageIso][$slug_in_work] : false;
                     if ( false !== $value_slug ) {
                         $original_slug_in_work = $value_slug;
                     }
                 }
 			}
 
-            if ( isset( $custom_urls[ $key_code ] )) {
-                $key_slug = array_search( $original_slug_in_work, $custom_urls[ $key_code ] ); //phpcs:ignore
+            $toTranslateLanguageIso = ($key = array_search($key_code,$language_code_rewrited)) ? $key:$key_code;
+            if ( isset( $custom_urls[ $toTranslateLanguageIso ] )) {
+                $key_slug = array_search( $original_slug_in_work, $custom_urls[ $toTranslateLanguageIso ] ); //phpcs:ignore
                 if ( false !== $key_slug ) {
                     $url_lang = str_replace($slug_in_work, $key_slug, $url_lang);
                 }

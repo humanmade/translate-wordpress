@@ -420,6 +420,11 @@ class Option_Service_Weglot {
 	 */
 	public function get_destination_languages() {
 		$destination_languages     = $this->get_option( 'destination_language' );
+
+        $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+        $destination_languages = array_map(function ($v) use ($language_code_rewrited) {
+            return isset($language_code_rewrited[$v]) ? $language_code_rewrited[$v] : $v;
+        }, $destination_languages);
 		return apply_filters( 'weglot_destination_languages', $destination_languages );
 	}
 

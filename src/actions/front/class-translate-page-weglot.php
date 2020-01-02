@@ -233,28 +233,31 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 		$custom_urls = $this->option_services->get_option( 'custom_urls' );
 
 		// No language configured
-		if ( ! isset( $custom_urls[ $current_language ] ) ) {
+        $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+        $toTranslateLanguageIso = ($key = array_search($current_language,$language_code_rewrited)) ? $key:$current_language;
+
+        if ( ! isset( $custom_urls[ $toTranslateLanguageIso ] ) ) {
 			$this->request_uri_default();
 			return;
 		}
 
-		$key_slug = array_search( $slug_in_work, $custom_urls[ $current_language ] ); //phpcs:ignore
+		$key_slug = array_search( $slug_in_work, $custom_urls[ $toTranslateLanguageIso ] ); //phpcs:ignore
 
-		// No custom URL for this language with this slug
-		if ( ! isset( $custom_urls[ $current_language ][ $slug_in_work ] ) && false === $key_slug ) {
+        // No custom URL for this language with this slug
+		if ( ! isset( $custom_urls[ $toTranslateLanguageIso ][ $slug_in_work ] ) && false === $key_slug ) {
 			$this->request_uri_default();
 			return;
 		}
 
 		// Custom URL exist but not good slug
-		if ( ! isset( $custom_urls[ $current_language ][ $slug_in_work ] ) ) {
+		if ( ! isset( $custom_urls[ $toTranslateLanguageIso ][ $slug_in_work ] ) ) {
 			return;
 		}
 
 		$_SERVER['REQUEST_URI'] = str_replace(
 			'/' . $current_language . '/',
 			'/',
-			str_replace( $slug_in_work, $custom_urls[ $current_language ][ $slug_in_work ], $_SERVER['REQUEST_URI'] ) //phpcs:ignore
+			str_replace( $slug_in_work, $custom_urls[ $toTranslateLanguageIso ][ $slug_in_work ], $_SERVER['REQUEST_URI'] ) //phpcs:ignore
 		);
 	}
 

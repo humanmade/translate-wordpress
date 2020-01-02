@@ -78,7 +78,10 @@ class Language_Service_Weglot {
 	 * @return array
 	 */
 	public function get_language( $key_code ) {
-		return $this->get_languages_available()[ $key_code ];
+
+        $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+		$language = ($key = array_search($key_code,$language_code_rewrited)) ? $this->get_languages_available()[ $key ]:$this->get_languages_available()[ $key_code ];
+		return $language;
 	}
 
 	/**
@@ -106,7 +109,6 @@ class Language_Service_Weglot {
 					break;
 			}
 		}
-
 		return $languages_object;
 	}
 
@@ -119,6 +121,9 @@ class Language_Service_Weglot {
 	public function get_current_language_entry_from_key( $key_code ) {
 
 		$languages = $this->get_languages_available();
+        $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+		if($key = array_search($key_code,$language_code_rewrited))
+            $key_code = $key;
 
 		if ( isset( $languages[ $key_code ] ) ) {
 			$current_language_entry = $languages[ $key_code ];
