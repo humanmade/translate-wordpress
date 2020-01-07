@@ -129,7 +129,7 @@ class HreflangPageTest extends WP_UnitTestCase {
 		$out               = $href_lang_service->generate_href_lang_tags(); //phpcs:ignore
 
 		$this->assertFalse( strpos( $out, 'no_lredirect=true' ) );
-		$this->assertFalse( strpos( $out, 'href="?no_lredirect=true" hreflang="en"' ) );
-		$this->assertNotFalse( strpos( $out, ' href="http://example.org/es/" hreflang="es"' ) );
+		$this->assertFalse( strpos( $out, ' hreflang="en" href="?no_lredirect=true"' ) );
+		$this->assertNotFalse( strpos( $out, ' hreflang="es" href="http://example.org/es/"' ) );
 	}
 }
