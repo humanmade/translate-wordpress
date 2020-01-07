@@ -201,6 +201,10 @@ See changelog for upgrade changes.
 
 == Changelog ==
 
+= 3.1.5 (08/01/2020) =
+* Add: weglot_language_code_replace filter to use custom language code
+* Bugfix: Formatter on JSON source for untranslated WooComerce fields
+
 = 3.1.4 (12/12/2019) =
 * Update back office style for WordPress 5.3
 * Fix: Flags SRC attribute with AMP
