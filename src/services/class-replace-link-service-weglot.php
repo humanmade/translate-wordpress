@@ -54,9 +54,11 @@ class Replace_Link_Service_Weglot {
 			$request_without_language     = array_filter( explode( '/', $path ), 'strlen' );
 			$index_entries                = count( $request_without_language );
 
-			if ( isset( $request_without_language[ $index_entries ] ) && ! is_admin() && ! empty( $custom_urls ) && isset( $custom_urls[ $current_language ] ) ) {
+            $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+            $toTranslateLanguageIso = ($key = array_search($current_language,$language_code_rewrited)) ? $key:$current_language;
+			if ( isset( $request_without_language[ $index_entries ] ) && ! is_admin() && ! empty( $custom_urls ) && isset( $custom_urls[ $toTranslateLanguageIso ] ) ) {
 				$slug_in_work             = $request_without_language[ $index_entries ];
-				$key_slug                 = array_search( $slug_in_work, $custom_urls[ $current_language ] ); //phpcs:ignore
+				$key_slug                 = array_search( $slug_in_work, $custom_urls[ $toTranslateLanguageIso ] ); //phpcs:ignore
 				if ( false !== $key_slug && ! empty( $key_slug ) ) {
 					$path = str_replace( $slug_in_work, $key_slug, $path );
 				}

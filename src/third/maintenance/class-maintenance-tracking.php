@@ -12,12 +12,12 @@ use WeglotWP\Models\Hooks_Interface_Weglot;
 /**
  * Maintenance_Tracking
  *
- * @since 3.1.1
+ * @since 3.1.4
  */
 class Maintenance_Tracking implements Hooks_Interface_Weglot {
 
 	/**
-	 * @since 3.1.1
+	 * @since 3.1.4
 	 * @return void
 	 */
 	public function __construct() {
@@ -25,7 +25,7 @@ class Maintenance_Tracking implements Hooks_Interface_Weglot {
 	}
 
 	/**
-	 * @since 3.1.1
+	 * @since 3.1.4
 	 * @see Hooks_Interface_Weglot
 	 * @return void
 	 */
@@ -43,7 +43,7 @@ class Maintenance_Tracking implements Hooks_Interface_Weglot {
 
 
 	/**
-	 * @since 3.1.1
+	 * @since 3.1.4
 	 * @return void
 	 */
 	public function weglot_maintenance_tracking( $options_available ) {

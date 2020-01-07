@@ -13,12 +13,12 @@ use WeglotWP\Models\Third_Active_Interface_Weglot;
 /**
  * Maintenance_Active
  *
- * @since 3.1.1
+ * @since 3.1.4
  */
 class Maintenance_Active implements Third_Active_Interface_Weglot {
 
 	/**
-	 * @since 3.1.1
+	 * @since 3.1.4
 	 * @return boolean
 	 *
 	 * Check if Maintenance plugin is active

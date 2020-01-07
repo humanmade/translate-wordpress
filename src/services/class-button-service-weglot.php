@@ -115,20 +115,24 @@ class Button_Service_Weglot {
 			$name                   = $this->get_name_with_language_entry( $current_language_entry );
 
 			$uniq_id = 'wg' . uniqid( strtotime( 'now' ) ) . rand( 1, 1000 );
-			$button_html .= sprintf( '<input id="%s" class="weglot_choice" type="checkbox" name="menu"/><label for="%s" class="wgcurrent wg-li weglot-lang weglot-language %s" data-code-language="%s"><span>%s</span></label>', esc_attr($uniq_id), esc_attr($uniq_id), esc_attr($flag_class . $current_language), esc_attr($current_language_entry->getIso639()), esc_html($name) );
+			$button_html .= sprintf( '<input id="%s" class="weglot_choice" type="checkbox" name="menu"/><label for="%s" class="wgcurrent wg-li weglot-lang weglot-language %s" data-code-language="%s"><span>%s</span></label>', esc_attr($uniq_id), esc_attr($uniq_id), esc_attr($flag_class . $current_language_entry->getIso639()), esc_attr($current_language_entry->getIso639()), esc_html($name) );
 
 			$button_html .= '<ul>';
 
 			array_unshift( $destination_language, $original_language );
 
 			foreach ( $destination_language as $key => $key_code ) {
-				if ( $key_code === $current_language || $this->private_language_services->is_active_private_mode_for_lang( $key_code ) ) {
+
+			    $language_code_rewrited = apply_filters('weglot_language_code_replace' ,  array());
+                $toTranslateLanguageIso = ($key = array_search($key_code,$language_code_rewrited)) ? $key:$key_code;
+
+				if ( $key_code === $current_language || $this->private_language_services->is_active_private_mode_for_lang( $toTranslateLanguageIso ) ) {
 					continue;
 				}
 
-				$button_html .= sprintf( '<li class="wg-li weglot-lang weglot-language %s" data-code-language="%s">', $flag_class . $key_code, $key_code );
+				$button_html .= sprintf( '<li class="wg-li weglot-lang weglot-language %s" data-code-language="%s">', $flag_class . $toTranslateLanguageIso, $toTranslateLanguageIso );
 
-				$current_language_entry  = $this->language_services->get_current_language_entry_from_key( $key_code );
+				$current_language_entry  = $this->language_services->get_current_language_entry_from_key( $toTranslateLanguageIso );
 				$name                    = $this->get_name_with_language_entry( $current_language_entry );
 
 				$link_button = $this->custom_url_services->get_link_button_with_key_code( $key_code );

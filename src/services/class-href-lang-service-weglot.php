@@ -26,7 +26,7 @@ class Href_Lang_Service_Weglot {
 	 */
 	public function generate_href_lang_tags() {
 		$destination_languages = weglot_get_all_languages_configured();
-		$render                = '';
+		$render                = "\n";
 		if ( $this->private_language_service->private_mode_for_all_languages() ) {
 			return apply_filters( 'weglot_href_lang', $render );
 		}
@@ -38,7 +38,7 @@ class Href_Lang_Service_Weglot {
 				}
 
 				$url = $this->custom_url_services->get_link( $language, false );
-				$render .= '<link rel="alternate" href="' . esc_url($url) . '" hreflang="' . $language . '"/>' . "\n";
+				$render .= '<link rel="alternate" hreflang="' . $language . '" href="' . esc_url($url) . '"/>' . "\n";
 			}
 		} catch ( \Exception $e ) {
 			$render = $this->request_url_services->get_weglot_url()->generateHrefLangsTags();
