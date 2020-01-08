@@ -57,7 +57,9 @@ class Button_Service_Weglot {
 		$name        = '';
 
 		if ( $with_name ) {
-			$name = ( $is_fullname ) ? $language_entry->getLocalName() : strtoupper( $language_entry->getIso639() );
+            $language_code_rewrited = apply_filters('weglot_language_code_replace' , array());
+            $l = isset($language_code_rewrited[$language_entry->getIso639()]) ? $language_code_rewrited[$language_entry->getIso639()]:$language_entry->getIso639();
+			$name = ( $is_fullname ) ? $language_entry->getLocalName() : strtoupper( $l );
 		}
 
 		return apply_filters( 'weglot_get_name_with_language_entry', $name, $language_entry );
