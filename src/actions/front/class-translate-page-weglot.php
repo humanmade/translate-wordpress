@@ -60,7 +60,7 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 		) {
 			return;
 		}
-
+        $this->request_url_services->init_weglot_url();
 		$this->current_language   = $this->request_url_services->get_current_language();
 
 		if ( $this->private_language_services->is_active_private_mode_for_lang( $this->current_language ) ) {
