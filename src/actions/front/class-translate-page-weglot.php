@@ -179,7 +179,7 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 	public function check_need_to_redirect() {
 		if (
 			! wp_doing_ajax() && // no ajax
-			$this->request_url_services->get_weglot_url()->getBaseUrl() === '/' && // front_page
+			$this->request_url_services->get_weglot_url()->getPath() === '/' && // front_page
 			! $this->redirect_services->get_no_redirect() && // No force redirect
 			! Server::detectBot( $_SERVER ) !== BotType::OTHER && //phpcs:ignore
 			$this->option_services->get_option( 'auto_redirect' ) // have option redirect
