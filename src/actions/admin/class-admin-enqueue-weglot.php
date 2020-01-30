@@ -104,5 +104,15 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 			'inline'   => $this->option_services->get_css_custom_inline(),
 			'flag_css' => $this->option_services->get_option( 'flag_css' ),
 		]);
+
+
+		/**
+		 * Register Code Editor
+		 */
+		$cm_settings['codeEditor'] = wp_enqueue_code_editor(array('type' => 'text/css'));
+		wp_localize_script('jquery', 'cm_settings', $cm_settings);
+
+		wp_enqueue_script('wp-theme-plugin-editor');
+		wp_enqueue_style('wp-codemirror');
 	}
 }

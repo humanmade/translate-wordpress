@@ -7,6 +7,10 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 #weglot-url-translate,
 #wrap-weglot {
 
+	.CodeMirror-placeholder {
+		color: #c0c0c0;
+	}
+
 	.weglot__choice__language {
 		border-bottom: 1px solid #eee;
 		margin: 5px 0px;
