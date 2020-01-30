@@ -109,10 +109,13 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 		/**
 		 * Register Code Editor
 		 */
-		$cm_settings['codeEditor'] = wp_enqueue_code_editor(array('type' => 'text/css'));
-		wp_localize_script('jquery', 'cm_settings', $cm_settings);
+		if (function_exists( 'wp_enqueue_code_editor')) {
+			$cm_settings['codeEditor'] = wp_enqueue_code_editor(array('type' => 'text/css'));
+			wp_localize_script('jquery', 'cm_settings', $cm_settings);
 
-		wp_enqueue_script('wp-theme-plugin-editor');
-		wp_enqueue_style('wp-codemirror');
+			wp_enqueue_script('wp-theme-plugin-editor');
+			wp_enqueue_style('wp-codemirror');
+		}
+
 	}
 }
