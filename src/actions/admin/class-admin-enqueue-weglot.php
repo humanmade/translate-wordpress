@@ -22,9 +22,9 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 	 * @since 2.0
 	 */
 	public function __construct() {
-		$this->language_services   = weglot_get_service( 'Language_Service_Weglot' );
-		$this->option_services     = weglot_get_service( 'Option_Service_Weglot' );
-		$this->user_api_services   = weglot_get_service( 'User_Api_Service_Weglot' );
+		$this->language_services = weglot_get_service( 'Language_Service_Weglot' );
+		$this->option_services   = weglot_get_service( 'Option_Service_Weglot' );
+		$this->user_api_services = weglot_get_service( 'User_Api_Service_Weglot' );
 	}
 
 	/**
@@ -71,9 +71,9 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 
 		wp_enqueue_script( 'weglot-admin', WEGLOT_URL_DIST . '/admin-js.js', [ 'weglot-admin-selectize-js' ], [], WEGLOT_VERSION );
 
-		$user_info        = $this->user_api_services->get_user_info();
-		$plans            = $this->user_api_services->get_plans();
-		$limit            = 1000;
+		$user_info = $this->user_api_services->get_user_info();
+		$plans     = $this->user_api_services->get_plans();
+		$limit     = 1000;
 		if (
 			isset( $user_info['plan_id'] ) &&
 			$user_info['plan_id'] <= 1 ||
@@ -88,33 +88,47 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 			$limit = $plans['business']['limit_language'];
 		}
 
-		wp_localize_script( 'weglot-admin', 'weglot_languages', [
-			'available' => json_decode( json_encode( $this->language_services->get_languages_available( [
-				'sort' => true,
-			] ), true ), true ),
-			'limit'     => $limit,
-			'plans'     => $this->user_api_services->get_plans(),
-			'original'  => weglot_get_original_language(),
-		]);
+		wp_localize_script(
+			'weglot-admin',
+			'weglot_languages',
+			[
+				'available' => json_decode(
+					json_encode(
+						$this->language_services->get_languages_available(
+							[
+								'sort' => true,
+							]
+						),
+						true
+					),
+					true
+				),
+				'limit'     => $limit,
+				'plans'     => $this->user_api_services->get_plans(),
+				'original'  => weglot_get_original_language(),
+			]
+		);
 
 		wp_enqueue_style( 'weglot-admin-css', WEGLOT_URL_DIST . '/css/admin-css.css', [], WEGLOT_VERSION );
 
 		wp_enqueue_style( 'weglot-css', WEGLOT_URL_DIST . '/css/front-css.css', [], WEGLOT_VERSION );
-		wp_localize_script( 'weglot-admin', 'weglot_css', [
-			'inline'   => $this->option_services->get_css_custom_inline(),
-			'flag_css' => $this->option_services->get_option( 'flag_css' ),
-		]);
-
+		wp_localize_script(
+			'weglot-admin',
+			'weglot_css',
+			[
+				'inline'   => $this->option_services->get_css_custom_inline(),
+				'flag_css' => $this->option_services->get_option( 'flag_css' ),
+			]
+		);
 
 		/**
 		 * Register Code Editor
 		 */
-		if (function_exists( 'wp_enqueue_code_editor')) {
-			$cm_settings['codeEditor'] = wp_enqueue_code_editor(array('type' => 'text/css'));
-			wp_localize_script('jquery', 'cm_settings', $cm_settings);
-
-			wp_enqueue_script('wp-theme-plugin-editor');
-			wp_enqueue_style('wp-codemirror');
+		if ( function_exists( 'wp_enqueue_code_editor' ) ) {
+			$cm_settings['codeEditor'] = wp_enqueue_code_editor( array( 'type' => 'text/css' ) );
+			wp_localize_script( 'jquery', 'cm_settings', $cm_settings );
+			wp_enqueue_script( 'wp-theme-plugin-editor' );
+			wp_enqueue_style( 'wp-codemirror' );
 		}
 
 	}
