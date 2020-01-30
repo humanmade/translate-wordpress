@@ -7,9 +7,20 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 #weglot-url-translate,
 #wrap-weglot {
 
+	/* Code Editor */
+	.CodeMirror-placeholder {
+		color: #c0c0c0;
+	}
+
+	.CodeMirror-wrap {
+		border-radius: 4px;
+		border: 1px solid #c0c0c0;
+	}
+	/* End Code Editor */
+
 	.weglot__choice__language {
 		border-bottom: 1px solid #eee;
-		margin: 5px 0px;
+		margin: 5px 0;
 
 		&--local {
 			border-width: 50px;
