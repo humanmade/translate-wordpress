@@ -1,5 +1,6 @@
 
 @import '_colors.scss';
+@import 'flags.scss';
 $heightSelector: 37px;
 $lineHeight: 36px;
 
@@ -244,6 +245,3 @@ html[dir="rtl"]{
     }
   }
 }
-
-
-
