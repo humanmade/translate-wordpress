@@ -1,7 +1,7 @@
 .weglot-flags {
 	&.hw > a:before, &.hw > span:before { background-position: -3570px 0 !important; }
 	&.af > a:before, &.af > span:before { background-position: -6570px 0 !important; }
-	&.fl > a:before, &.fl > span:before { background-position: -3060px 0px !important; }
+	&.fl > a:before, &.fl > span:before { background-position: -3060px 0 !important; }
 	&.sq > a:before, &.sq > span:before { background-position: -2580px 0 !important; }
 	&.am > a:before, &.am > span:before { background-position: -5130px 0 !important; }
 	&.ar > a:before, &.ar > span:before { background-position: -510px 0 !important; }
@@ -19,13 +19,13 @@
 	&.tw > a:before, &.tw > span:before { background-position: -2970px 0 !important; }
 	&.km > a:before, &.km > span:before { background-position: -6930px 0 !important; }
 	&.ny > a:before, &.ny > span:before { background-position: -1140px 0 !important; }
-	&.co > a:before, &.co > span:before { background-position: -2520px 0; } /* a faire !important */
+	&.co > a:before, &.co > span:before { background-position: -2520px 0 !important; } /* TODO */
 	&.hr > a:before, &.hr > span:before { background-position: -5910px 0 !important; }
 	&.cs > a:before, &.cs > span:before { background-position: -2700px 0 !important; }
 	&.da > a:before, &.da > span:before { background-position: -2670px 0 !important; }
 	&.nl > a:before, &.nl > span:before { background-position: -2100px 0 !important; }
 	&.en > a:before, &.en > span:before { background-position: -1920px 0 !important; }
-	&.eo > a:before, &.eo > span:before { background-position: -1920px 0; } /* a faire !important */
+	&.eo > a:before, &.eo > span:before { background-position: -1920px 0 !important; } /* TODO */
 	&.et > a:before, &.et > span:before { background-position: -2640px 0 !important; }
 	&.fj > a:before, &.fj > span:before { background-position: -1710px 0 !important; }
 	&.fi > a:before, &.fi > span:before { background-position: -2550px 0 !important; }
@@ -50,9 +50,9 @@
 	&.kn > a:before, &.kn > span:before { background-position: -1170px 0 !important; }
 	&.kk > a:before, &.kk > span:before { background-position: -3150px 0 !important; }
 	&.ko > a:before, &.ko > span:before { background-position: -6990px 0 !important; }
-	&.ku > a:before, &.ku > span:before { background-position: -2430px 0; } /* a faire !important */
+	&.ku > a:before, &.ku > span:before { background-position: -2430px 0 !important; } /* TODO */
 	&.ky > a:before, &.ky > span:before { background-position: -3420px 0 !important; }
-	&.lo > a:before, &.lo > span:before { background-position: -3450px 0; } /* a faire !important */
+	&.lo > a:before, &.lo > span:before { background-position: -3450px 0 !important; } /* TODO */
 	&.la > a:before, &.la > span:before { background-position: -2310px 0 !important; }
 	&.lv > a:before, &.lv > span:before { background-position: -2280px 0 !important; }
 	&.lt > a:before, &.lt > span:before { background-position: -2250px 0 !important; }
@@ -245,7 +245,7 @@
 		&.da > a:before, &.da > span:before { background-position: -2448px 0 !important; }
 		&.nl > a:before, &.nl > span:before { background-position: -1296px 0 !important; }
 		&.en > a:before, &.en > span:before { background-position: -312px 0 !important; }
-		&.eo > a:before, &.eo > span:before { background-position: -312px 0; } /* a faire !important */
+		&.eo > a:before, &.eo > span:before { background-position: -312px 0 !important; } /* TODO */
 		&.et > a:before, &.et > span:before { background-position: -2424px 0 !important; }
 		&.fj > a:before, &.fj > span:before { background-position: -576px 0 !important; }
 		&.fi > a:before, &.fi > span:before { background-position: -2328px 0 !important; }
@@ -349,13 +349,13 @@
 		&.tw > a:before, &.tw > span:before { background-position: -4008px 0 !important; }
 		&.km > a:before, &.km > span:before { background-position: -4201px 0 !important; }
 		&.ny > a:before, &.ny > span:before { background-position: -384px 0 !important; }
-		&.co > a:before, &.co > span:before { background-position: -2760px 0; } /* a faire !important */
+		&.co > a:before, &.co > span:before { background-position: -2760px 0 !important; } /* TODO */
 		&.hr > a:before, &.hr > span:before { background-position: -3048px 0 !important; }
 		&.cs > a:before, &.cs > span:before { background-position: -5280px 0 !important; }
 		&.da > a:before, &.da > span:before { background-position: -3024px 0 !important; }
 		&.nl > a:before, &.nl > span:before { background-position: -3360px 0 !important; }
 		&.en > a:before, &.en > span:before { background-position: -2520px 0 !important; }
-		&.eo > a:before, &.eo > span:before { background-position: -2520px 0; } /* a faire !important */
+		&.eo > a:before, &.eo > span:before { background-position: -2520px 0 !important; } /* TODO */
 		&.et > a:before, &.et > span:before { background-position: -2856px 0 !important; }
 		&.fj > a:before, &.fj > span:before { background-position: -0px 0 !important; }
 		&.fi > a:before, &.fi > span:before { background-position: -2784px 0 !important; }
@@ -409,7 +409,7 @@
 		&.sr > a:before, &.sr > span:before { background-position: -3312px 0 !important; }
 		&.sn > a:before, &.sn > span:before { background-position: -5521px 0 !important; }
 		&.sd > a:before, &.sd > span:before { background-position: -1993px 0 !important; }
-		&.si > a:before, &.si > span:before { background-position: -2833px 0; } /* a faire !important */
+		&.si > a:before, &.si > span:before { background-position: -2833px 0 !important; } /* TODO */
 		&.sk > a:before, &.sk > span:before { background-position: -552px 0 !important; }
 		&.sl > a:before, &.sl > span:before { background-position: -936px 0 !important; }
 		&.so > a:before, &.so > span:before { background-position: -4032px 0 !important; }
