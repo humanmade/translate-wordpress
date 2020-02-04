@@ -6,7 +6,6 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 
 #weglot-url-translate,
 #wrap-weglot {
-
 	/* Code Editor */
 	.CodeMirror-placeholder {
 		color: #c0c0c0;
@@ -106,10 +105,10 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 		margin-bottom: 10px;
 	}
 
-	::-webkit-input-placeholder,
-	:-moz-placeholder,
-	::-moz-placeholder,
-	:-ms-input-placeholder {
+	&::-webkit-input-placeholder,
+	&:-moz-placeholder,
+	&::-moz-placeholder,
+	&:-ms-input-placeholder {
 		color: #c0c0c0;
 	}
 
@@ -429,13 +428,11 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 	}
 }
 
-
 #weglot-url-translate {
 	.weglot_custom_url {
 		border-bottom: 1px solid #ccc;
 		margin-bottom: 20px;
 		padding-bottom: 10px;
-
 
 		a {
 			margin: 5px 0px;
@@ -447,7 +444,6 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 		}
 
 		.weglot_custom_url--text_link {
-
 			input[type="text"] {
 				min-height: 24px !important;
 				height: 24px;
@@ -467,7 +463,6 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 					}
 				}
 			}
-
 		}
 
 		a.weglot_reset {

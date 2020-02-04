@@ -1,35 +1,34 @@
-
-@import '_colors.scss';
-@import '_flags.scss';
-@import 'third/mega_max_menu.scss';
+@import "_colors.scss";
+@import "_flags.scss";
+@import "third/mega_max_menu.scss";
 $heightSelector: 37px;
 $lineHeight: 36px;
 
-li.weglot-hide, .weglot-hide{
-	display:none !important;
+li.weglot-hide,
+.weglot-hide {
+	display: none !important;
 }
 
-
 .country-selector {
-	z-index : 9999;
+	z-index: 9999;
 	text-align: left;
 	position: relative;
-	display : inline-block;
+	display: inline-block;
 	width: auto;
 
 	a {
 		padding: 0 10px;
-		outline : none;
+		outline: none;
 		text-decoration: none;
-		float: none!important;
+		float: none !important;
 		white-space: nowrap;
-		font-weight : normal;
+		font-weight: normal;
 		cursor: pointer;
-		color : black;
+		color: black;
 		-webkit-touch-callout: none; /* iOS Safari */
 		user-select: none;
 		&:focus {
-			outline : none;
+			outline: none;
 		}
 	}
 
@@ -41,33 +40,35 @@ li.weglot-hide, .weglot-hide{
 	}
 
 	li {
-		margin : 0px;
-		padding : 0px;
+		margin: 0px;
+		padding: 0px;
 	}
 
 	&.weglot-dropdown {
-		background-color : white;
+		background-color: white;
 
-		a, span {
+		a,
+		span {
 			display: block;
 			height: $heightSelector;
 			line-height: $lineHeight;
 			font-size: 13px;
-			padding : 0 10px;
-			width : 100%;
+			padding: 0 10px;
+			width: 100%;
 			box-sizing: border-box;
 			font-weight: normal;
-			&:hover{
+			&:hover {
 				cursor: pointer;
 			}
 		}
 
-		.wgcurrent  {
+		.wgcurrent {
 			border: 1px solid #e0e0e0;
 			list-style: none;
 			display: block;
 			margin: 0;
-			a, span{
+			a,
+			span {
 				padding-right: 60px;
 			}
 
@@ -79,8 +80,8 @@ li.weglot-hide, .weglot-hide{
 				width: 13px;
 				height: 7px;
 				image-rendering: pixelated;
-				background : url('../images/wgarrowdown.png')  no-repeat;
-				content: '';
+				background: url("../images/wgarrowdown.png") no-repeat;
+				content: "";
 				transition: all 200ms;
 				transform: rotate(-90deg);
 			}
@@ -90,17 +91,16 @@ li.weglot-hide, .weglot-hide{
 			position: absolute;
 			min-width: 100%;
 			border: 1px solid #ebeef0;
-			background: white ;
-			left : 0;
-			top : initial;
+			background: white;
+			left: 0;
+			top: initial;
 			box-sizing: border-box;
-			display : none;
+			display: none;
 			padding: 0;
-
 		}
 
-		input:checked ~ ul{
-			display : block;
+		input:checked ~ ul {
+			display: block;
 		}
 
 		input:checked ~ .wgcurrent:after {
@@ -108,31 +108,30 @@ li.weglot-hide, .weglot-hide{
 		}
 
 		li {
-			width : 100%;
+			width: 100%;
 		}
 
-		&.weglot-invert{
-			ul{
-				bottom:38px;
+		&.weglot-invert {
+			ul {
+				bottom: 38px;
 			}
 			input:checked ~ .wgcurrent:after {
 				transform: rotate(-180deg);
 			}
 		}
-
 	}
 
 	&.weglot-default {
-		position : fixed;
-		bottom : 0px;
-		right : 40px;
+		position: fixed;
+		bottom: 0px;
+		right: 40px;
 	}
 
 	&.weglot-inline {
 		a {
 			&:hover {
-				text-decoration : underline;
-				color : #00a0d2;
+				text-decoration: underline;
+				color: #00a0d2;
 			}
 		}
 
@@ -154,30 +153,27 @@ li.weglot-hide, .weglot-hide{
 		}
 
 		li {
-			line-height:1 !important;
-			display : inline-block;
+			line-height: 1 !important;
+			display: inline-block;
 			margin: 2px 0px;
 			vertical-align: middle;
 		}
 
 		&.weglot-default {
-			bottom : 5px;
+			bottom: 5px;
 		}
 	}
 
-
-
-	input{
-		display:none !important;
+	input {
+		display: none !important;
 	}
-
 }
 
 .navbar {
 	.navbar-nav {
 		li.weglot-flags {
 			a.weglot-lang {
-				&:before{
+				&:before {
 					position: static;
 					transform: none;
 					transition: none;
@@ -187,21 +183,23 @@ li.weglot-hide, .weglot-hide{
 	}
 }
 
-.js .main-navigation .country-selector ul{
-	display:none;
+.js .main-navigation .country-selector ul {
+	display: none;
 }
 
-html[dir="rtl"]{
-	.weglot-flags a:before, .weglot-flags span:before {
-		margin-right:0;
-		margin-left:10px;
+html[dir="rtl"] {
+	.weglot-flags a:before,
+	.weglot-flags span:before {
+		margin-right: 0;
+		margin-left: 10px;
 	}
 }
 
 .weglot-flags {
-	> a, > span {
+	> a,
+	> span {
 		&:before {
-			background-image: url('../images/rect_mate.png');
+			background-image: url("../images/rect_mate.png");
 			background-size: auto 20px !important;
 			border-radius: 0px !important;
 			width: 30px !important;
@@ -214,14 +212,16 @@ html[dir="rtl"]{
 		}
 	}
 	&.flag-1 {
-		> a, > span {
+		> a,
+		> span {
 			&:before {
 				background-image: url("../images/rect_bright.png");
 			}
 		}
 	}
 	&.flag-2 {
-		> a, > span {
+		> a,
+		> span {
 			&:before {
 				background-image: url("../images/square_flag.png");
 				width: 24px !important;
@@ -231,7 +231,8 @@ html[dir="rtl"]{
 		}
 	}
 	&.flag-3 {
-		a, span {
+		a,
+		span {
 			&:before {
 				background-image: url("../images/circular_flag.png");
 				width: 24px !important;
@@ -240,7 +241,6 @@ html[dir="rtl"]{
 			}
 		}
 	}
-
 
 	> a {
 		span:before {
@@ -254,6 +254,4 @@ html[dir="rtl"]{
 			display: none !important;
 		}
 	}
-
-
 }
