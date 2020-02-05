@@ -70,6 +70,9 @@ class Options_Weglot implements Hooks_Interface_Weglot {
 		}
 
 		$tab         = $_GET[ 'tab' ]; //phpcs:ignore
+        array_walk_recursive( $_POST, function ( &$element ) { //We remove unwanted backslashes
+            $element = stripslashes( $element );
+        } );
 		$options     = $_POST[ WEGLOT_SLUG ]; //phpcs:ignore
 		$options_bdd = $this->option_services->get_options_bdd_v3();
 		switch ( $tab ) {
