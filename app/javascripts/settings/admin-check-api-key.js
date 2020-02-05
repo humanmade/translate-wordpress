@@ -37,6 +37,9 @@ const init_admin_button_preview = function () {
 				$("#wrap-weglot #submit").prop("disabled", true);
 			}
 
+			$(".weglot-keyres").remove();
+			$("#api_key_private").after('<span class="weglot-keyres weglot-ckeckkey"></span>');
+
 			$.ajax(
 				{
 					method: 'POST',
@@ -46,7 +49,7 @@ const init_admin_button_preview = function () {
 						api_key: key,
 					},
 					success: ({data, success}) => {
-
+						$(".weglot-keyres").remove();
 						if (success ){
 							validApiKey(data)
 						}

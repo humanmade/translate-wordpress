@@ -324,6 +324,21 @@ $wp-color-green: #46b450; // RGB(70, 180, 80)
 		margin-top: -4px;
 	}
 
+	.weglot-ckeckkey:before {
+		content: "↻";
+		display: inline-block;
+		color: #666;
+		padding: 0 6px 0 0;
+		font-size: 16px;
+		padding: 0 10px;
+		line-height: 1em;
+		-webkit-animation: spin 2s infinite linear;
+	}
+	@-webkit-keyframes spin {
+		0%  {-webkit-transform: rotate(0deg);}
+		100% {-webkit-transform: rotate(360deg);}
+	}
+
 	.weglot-nokkey:before {
 		content: "\274C";
 		display: inline-block;
