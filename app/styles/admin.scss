@@ -4,6 +4,11 @@
 $wp-color-red: #dc3232; // RGB(220,50,50)
 $wp-color-green: #46b450; // RGB(70, 180, 80)
 
+
+#toplevel_page_weglot-settings .wp-menu-image.svg {
+	background-size: 24px auto !important;
+}
+
 #weglot-url-translate,
 #wrap-weglot {
 	/* Code Editor */
