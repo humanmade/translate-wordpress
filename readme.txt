@@ -201,7 +201,7 @@ See changelog for upgrade changes.
 
 == Changelog ==
 
-= 3.1.6 (05/02/2020) =
+= 3.1.6 (06/02/2020) =
 * Add: Use WP core code editor for Weglot custom CSS
 * Add: Add weglot_translate_email filter to control when mail are translated
 * Bugfix: Fixes small minor bugs
