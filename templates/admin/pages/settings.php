@@ -52,23 +52,23 @@ $url_form = wp_nonce_url(
 			?>
 			<input type="hidden" name="tab" value="<?php echo esc_attr( $this->tab_active ); ?>">
 		</form>
-		<?php if ( ! $this->options['has_first_settings'] ) {
-				?>
+		<?php if ( ! $this->options['has_first_settings'] ) : ?>
 		<hr>
+		<span class="dashicons dashicons-heart"></span>&nbsp;
 		<a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/weglot?rate=5#postform">
-			<?php esc_html_e( 'Love Weglot? Give us 5 stars on WordPress.org :)', 'weglot' ); ?>
+		<?php esc_html_e( 'Love Weglot? Give us 5 stars on WordPress.org', 'weglot' ); ?>
 		</a>
 		<i class="fa fa-question-circle question-icon" aria-hidden="true"></i>
 		<p class="weglot-five-stars">
 			<?php
 				// translators: 1 HTML Tag, 2 HTML Tag
-				echo sprintf( esc_html__( 'If you need any help, you can contact us via email us at support@weglot.com.', 'weglot' ), '<a href="https://weglot.com/" target="_blank">', '</a>' );
-				echo  '<br>';
+				echo sprintf( esc_html__( 'If you need any help, you can contact us via email us at %1$ssupport@weglot.com%2$s.', 'weglot' ), '<a href="mailto:support@weglot.com?subject=Need help from WP plugin admin" target="_blank">', '</a>' );
+				echo  ' ';
 				// translators: 1 HTML Tag, 2 HTML Tag
-				echo sprintf( esc_html__( 'You can also check our %1$sFAQ%2$s', 'weglot' ), '<a href="http://support.weglot.com/" target="_blank">', '</a>' ); ?>
+				echo sprintf( esc_html__( 'You can also check our %1$sFAQ%2$s.', 'weglot' ), '<a href="http://support.weglot.com/" target="_blank">', '</a>' ); ?>
 		</p>
-        <?php
-			} ?>
+		<hr>
+        <?php endif; ?>
 	</div>
 	<?php
 	if ( ! $this->options['has_first_settings'] ) :
