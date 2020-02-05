@@ -36,6 +36,7 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 	public function hooks() {
 		add_action( 'admin_enqueue_scripts', [ $this, 'weglot_admin_enqueue_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'weglot_admin_enqueue_scripts_metaboxes' ] );
+		add_action( 'admin_head', [ $this, 'weglot_admin_print_head' ] );
 	}
 
 	/**
@@ -131,5 +132,16 @@ class Admin_Enqueue_Weglot implements Hooks_Interface_Weglot {
 			wp_enqueue_style( 'wp-codemirror' );
 		}
 
+	}
+
+	/**
+	 * Print in admin head
+	 *
+	 * @since 3.1.6
+	 */
+	public function weglot_admin_print_head() {
+		?>
+		<style type="text/css"> #toplevel_page_weglot-settings .wp-menu-image.svg { background-size: 24px auto !important; } </style>
+		<?php
 	}
 }
