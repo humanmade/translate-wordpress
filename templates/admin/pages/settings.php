@@ -58,7 +58,6 @@ $url_form = wp_nonce_url(
 		<a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/weglot?rate=5#postform">
 		<?php esc_html_e( 'Love Weglot? Give us 5 stars on WordPress.org', 'weglot' ); ?>
 		</a>
-		<i class="fa fa-question-circle question-icon" aria-hidden="true"></i>
 		<p class="weglot-five-stars">
 			<?php
 				// translators: 1 HTML Tag, 2 HTML Tag
