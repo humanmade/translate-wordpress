@@ -4,7 +4,7 @@ Tags: translate, multilingual, language, translation, localization
 Requires at least: 4.5
 Tested up to: 5.3
 Requires PHP: 5.4
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -200,6 +200,11 @@ See changelog for upgrade changes.
 
 
 == Changelog ==
+
+= 3.1.6 (06/02/2020) =
+* Add: Use WP core code editor for Weglot custom CSS
+* Add: Add weglot_translate_email filter to control when mail are translated
+* Bugfix: Fixes small minor bugs
 
 = 3.1.5 (08/01/2020) =
 * Add: weglot_language_code_replace filter to use custom language code

@@ -45,7 +45,9 @@ class Email_Translate_Weglot implements Hooks_Interface_Weglot {
 	 * @return array
 	 */
 	public function weglot_translate_emails( $args ) {
-		$translate_email = $this->option_services->get_option( 'email_translate' );
+
+		$translate_email = apply_filters( 'weglot_translate_email', $this->option_services->get_option( 'email_translate' ), $args );
+
 		if ( ! $translate_email ) {
 			return $args;
 		}

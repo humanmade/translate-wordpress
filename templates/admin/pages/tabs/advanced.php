@@ -39,7 +39,7 @@ $options_available = [
 	'active_search' => [
 		'key'         => 'active_search',
 		'label'       => __( 'Search WordPress', 'weglot' ),
-		'description' => __( ' [BETA] : Allow your users to search in the language they use.', 'weglot' ),
+		'description' => __( 'Allow your users to search in the language they use.', 'weglot' ),
 	],
 	'private_mode' => [
 		'key'         => 'private_mode',

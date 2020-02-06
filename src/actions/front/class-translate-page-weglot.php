@@ -60,7 +60,8 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 		) {
 			return;
 		}
-
+        $this->request_url_services->init_weglot_url();
+		$this->request_url_services->get_weglot_url()->detectUrlDetails();
 		$this->current_language   = $this->request_url_services->get_current_language();
 
 		if ( $this->private_language_services->is_active_private_mode_for_lang( $this->current_language ) ) {
@@ -94,6 +95,7 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 			'ct_get_svg_icon_sets', // Oxygen
 			'oxy_render_nav_menu', // Oxygen
 			'hotel_booking_ajax_add_to_cart', // Hotel booking plugin
+			'imagify_get_admin_bar_profile', // Imagify Admin Bar
 		] );
 
 		if ( 'POST' === $_SERVER['REQUEST_METHOD'] && isset( $_POST['action'] ) && in_array( $_POST['action'], $action_ajax_no_translate ) ) { //phpcs:ignore
@@ -179,7 +181,7 @@ class Translate_Page_Weglot implements Hooks_Interface_Weglot {
 	public function check_need_to_redirect() {
 		if (
 			! wp_doing_ajax() && // no ajax
-			$this->request_url_services->get_weglot_url()->getBaseUrl() === '/' && // front_page
+			$this->request_url_services->get_weglot_url()->getPath() === '/' && // front_page
 			! $this->redirect_services->get_no_redirect() && // No force redirect
 			! Server::detectBot( $_SERVER ) !== BotType::OTHER && //phpcs:ignore
 			$this->option_services->get_option( 'auto_redirect' ) // have option redirect

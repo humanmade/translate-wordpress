@@ -208,6 +208,11 @@ class Options_Weglot implements Hooks_Interface_Weglot {
 		if ( ! isset( $options['excluded_blocks'] ) ) {
 			$options['excluded_blocks'] = [];
 		}
+		else {
+            array_walk_recursive( $options['excluded_blocks'], function ( &$element ) { //We remove unwanted backslashes
+                $element = stripslashes( $element );
+            } );
+        }
 
 		return $options;
 	}

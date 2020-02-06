@@ -299,13 +299,13 @@ $options_available = [
 	<tr valign="top">
 		<th scope="row"><?php esc_html_e( 'In menu?', 'weglot' ); ?></th>
 		<td>
-			<?php echo __( 'You can place the button in a menu area. Go to <a href="' . admin_url( 'nav-menus.php' ) . '">Appearance -> Menus</a> and drag and drop the Weglot Translate Custom link where you want.', 'weglot' ); ?>
+			<?php echo __( 'You can place the button in a menu area. Go to <a href="' . admin_url( 'nav-menus.php' ) . '">Appearance &rightarrow; Menus</a> and drag and drop the Weglot Translate Custom link where you want.', 'weglot' ); ?>
 		</td>
 	</tr>
 	<tr valign="top">
 		<th scope="row"><?php esc_html_e( 'As a widget?', 'weglot' ); ?></th>
 		<td>
-			<?php echo __( 'You can place the button in a widget area. Go to <a href="' . admin_url( 'widgets.php' ) . '">Appearance -> Widgets</a> and drag and drop the Weglot Translate widget where you want.', 'weglot' ); ?>
+			<?php echo __( 'You can place the button in a widget area. Go to <a href="' . admin_url( 'widgets.php' ) . '">Appearance &rightarrow; Widgets</a> and drag and drop the Weglot Translate widget where you want.', 'weglot' ); ?>
 		</td>
 	</tr>
 	<tr valign="top">
