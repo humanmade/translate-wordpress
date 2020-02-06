@@ -311,13 +311,13 @@ $options_available = [
 	<tr valign="top">
 		<th scope="row"><?php esc_html_e( 'With a shortcode?', 'weglot' ); ?></th>
 		<td>
-			<?php esc_html_e( 'You can use the Weglot shortcode [weglot_switcher] wherever you want to place the button.', 'weglot' ); ?>
+			<?php esc_html_e( 'You can use the Weglot shortcode ', 'weglot' ); ?> <code>[weglot_switcher]</code> <?php esc_html_e( 'wherever you want to place the button.', 'weglot' ); ?>
 		</td>
 	</tr>
 	<tr valign="top">
 		<th scope="row"><?php esc_html_e( 'In the source code?', 'weglot' ); ?></th>
 		<td>
-			<?php esc_html_e( 'You can add the code &lt;div id=&quot;weglot_here&quot;&gt;&lt;/div&gt; wherever you want in the source code of your HTML page. The button will appear at this place.', 'weglot' ); ?>
+			<?php esc_html_e( 'You can add the code ', 'weglot' ); ?> <code>&lt;div id=&quot;weglot_here&quot;&gt;&lt;/div&gt;</code> <?php esc_html_e( 'wherever you want in the source code of your HTML page. The button will appear at this place.', 'weglot' ); ?>
 		</td>
 	</tr>
 </table>
