@@ -19,7 +19,7 @@ class Amp_Enqueue_Weglot implements Hooks_Interface_Weglot {
 	 * @since 2.0
 	 */
 	public function __construct() {
-		$this->option_services           = weglot_get_service( 'Option_Service_Weglot' );
+		$this->option_services = weglot_get_service( 'Option_Service_Weglot' );
 	}
 
 	/**
@@ -30,6 +30,10 @@ class Amp_Enqueue_Weglot implements Hooks_Interface_Weglot {
 	 */
 	public function hooks() {
 		if ( ! defined( 'AMPFORWP_PLUGIN_DIR' ) && ! defined( 'AMP__VERSION' ) ) {
+			return;
+		}
+
+		if ( empty( $this->option_services->get_option( 'translate_amp' ) ) ) {
 			return;
 		}
 
