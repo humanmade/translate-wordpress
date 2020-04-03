@@ -56,10 +56,10 @@ class Widget_Selector_Weglot extends \WP_Widget {
 			$title = '';
 		} ?>
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 				<?php esc_html_e( 'Title:', 'weglot' ); ?>
 			</label>
-			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<?php
 	}
@@ -76,7 +76,7 @@ class Widget_Selector_Weglot extends \WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance            = [];
-		$instance['title']   = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['title']   = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( strip_tags( $new_instance['title'] ) ) : '';
 		return $instance;
 	}
 }

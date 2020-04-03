@@ -34,7 +34,7 @@ if ( ! empty( $_GET['reset-all-custom-urls'] ) && 'true' === $_GET['reset-all-cu
 		foreach ( $options['custom_urls'] as $lang => $urls ) :
 			?>
 
-			<h3><?php esc_html_e( 'Lang : ', 'weglot' ); ?><?php echo $lang; ?></h3>
+			<h3><?php esc_html_e( 'Lang : ', 'weglot' ); ?><?php echo esc_html( $lang ); ?></h3>
 
 			<div style="display:flex;">
 				<div style="flex:5; margin-right:10px;">
@@ -51,13 +51,13 @@ if ( ! empty( $_GET['reset-all-custom-urls'] ) && 'true' === $_GET['reset-all-cu
 				?>
 				<div style="display:flex;" id="<?php echo $keyGenerate; ?>">
 					<div style="margin-right:10px; flex:5;">
-						<input style="max-width:100%;" type="text" value="<?php echo $value; ?>" class="base-url base-url-<?php echo $keyGenerate; ?>" data-key="<?php echo $keyGenerate; ?>" name="<?php echo sprintf( '%s[%s][%s][%s]', WEGLOT_SLUG, 'custom_urls', $lang, $key ); ?>" data-lang="<?php echo $lang; ?>" />
+						<input style="max-width:100%;" type="text" value="<?php echo esc_attr( $value ); ?>" class="base-url base-url-<?php echo esc_attr( $keyGenerate ); ?>" data-key="<?php echo esc_attr( $keyGenerate ); ?>" name="<?php echo esc_attr( sprintf( '%s[%s][%s][%s]', WEGLOT_SLUG, 'custom_urls', $lang, $key ) ); ?>" data-lang="<?php echo esc_attr( $lang ); ?>" />
 					</div>
 					<div style="flex:5;">
-						<input style="max-width:100%;"  type="text" value="<?php echo $key; ?>" data-key="<?php echo $keyGenerate; ?>" class="custom-url custom-<?php echo $keyGenerate; ?>" data-lang="<?php echo $lang; ?>" />
+						<input style="max-width:100%;"  type="text" value="<?php echo esc_attr( $key ); ?>" data-key="<?php echo esc_attr( $keyGenerate ); ?>" class="custom-url custom-<?php echo esc_attr( $keyGenerate ); ?>" data-lang="<?php echo esc_attr( $lang ); ?>" />
 					</div>
 					<div style="align-self:flex-end; flex:1; text-align: center; height: 32px;">
-						<button class="js-btn-remove" data-key="<?php echo $keyGenerate; ?>">
+						<button class="js-btn-remove" data-key="<?php echo esc_attr( $keyGenerate ); ?>">
 							<span class="dashicons dashicons-minus"></span>
 						</button>
 					</div>

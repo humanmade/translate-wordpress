@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		<a
 			href="<?php echo esc_url( $tab['url'] ); ?>"
-			class="nav-tab <?php echo esc_html( $class_active ); ?>">
+			class="nav-tab <?php echo esc_attr( $class_active ); ?>">
 			<?php echo esc_html( $tab['title'] ); ?>
 		</a>
 			<?php
